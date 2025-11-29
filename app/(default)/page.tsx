@@ -1,6 +1,7 @@
 export const metadata = {
-  title: "Home - Simple",
-  description: "Page description",
+  title: "Hackstle | Darkweb Threat Intelligence",
+  description:
+    "Hackstle monitors darkweb chatter, leaked credentials, CVEs, and exposed assets to help teams act on threats fast.",
 };
 
 import Hero from "@/components/hero-home";

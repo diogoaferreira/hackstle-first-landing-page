@@ -30,16 +30,15 @@ export default function LargeTestimonial() {
               />
             </div>
             <p className="text-2xl font-bold text-gray-900">
-              “Simple has simplified my life in more ways than one. From
-              managing my sites to{" "}
-              <em className="italic text-gray-500">keeping track of tasks</em>,
-              it's become my go-to tool for everything.”
+              “Hackstle gives my SOC eyes on every darkweb mention of our
+              brands and ties it to the assets we expose. We see credential
+              dumps, CVEs, and supplier incidents before they hit the news.”
             </p>
             <div className="text-sm font-medium text-gray-500">
-              <span className="text-gray-700">Mary Sullivan</span>{" "}
+              <span className="text-gray-700">Amina Reyes</span>{" "}
               <span className="text-gray-400">/</span>{" "}
               <a className="text-blue-500" href="#0">
-                CTO at Microsoft
+                Director of Security Operations, Northwind Bank
               </a>
             </div>
           </div>
