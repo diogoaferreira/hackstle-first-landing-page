@@ -141,7 +141,7 @@ export default function ContactPage() {
                   </div>
                 </li>
                 <li className="flex gap-3">
-                  <span className="mt-[6px] h-2.5 w-2.5 rounded-full bg-indigo-400" />
+                  <span className="mt-[6px] h-2.5 w-2.5 rounded-full bg-[var(--color-brand-400)]" />
                   <div>
                     <p className="text-sm font-semibold">Third-party incident watch</p>
                     <p className="text-sm text-gray-200">Visibility into suppliers and partners linked to your org.</p>

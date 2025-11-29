@@ -16,7 +16,7 @@ export default function Header() {
             <li>
               <Link
                 href="/contact"
-                className="btn-sm bg-gray-800 text-gray-100 shadow-sm transition hover:bg-gray-900"
+                className="btn-sm bg-[var(--color-brand-500)] text-white shadow-sm transition hover:bg-[var(--color-brand-600)]"
               >
                 Contact Us
               </Link>

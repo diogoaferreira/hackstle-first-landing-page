@@ -33,7 +33,12 @@ input[type="search"]::-webkit-search-results-decoration {
 .form-textarea,
 .form-multiselect,
 .form-select {
-    @apply bg-white text-sm py-2.5 px-4 focus:border-blue-300;
+    @apply bg-white text-sm py-2.5 px-4;
+    --tw-border-opacity: 1;
+    border-color: color-mix(in srgb, var(--color-brand-300) calc(100% * var(--tw-border-opacity)), transparent);
+    &:focus {
+      border-color: var(--color-brand-300);
+    }
 }
 
 .form-input,
@@ -47,7 +52,14 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .form-checkbox,
 .form-radio {
-    @apply text-gray-800 checked:bg-blue-500 checked:border-transparent focus-visible:not-checked:border-blue-300;
+    @apply text-gray-800 checked:border-transparent;
+    &:checked {
+      background-color: var(--color-brand-500);
+    }
+
+    &:focus-visible:not(:checked) {
+      border-color: var(--color-brand-300);
+    }
 }
 
 .form-checkbox {

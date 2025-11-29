@@ -4,6 +4,17 @@
 @import './additional-styles/utility-patterns.css' layer(components);
 @import './additional-styles/theme.css';
 
+@layer base {
+  :root {
+    --color-brand-700: #5d26c5;
+    --color-brand-600: #7035e6;
+    --color-brand-500: #8c52ff;
+    --color-brand-400: #a978ff;
+    --color-brand-300: #cbb6ff;
+    --color-brand-200: #e6ddff;
+  }
+}
+
 @plugin "@tailwindcss/forms" {
   strategy: base;
 }
