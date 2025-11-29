@@ -11,22 +11,14 @@ export default function Header() {
             <Logo />
           </div>
 
-          {/* Desktop sign in links */}
+          {/* Desktop navigation */}
           <ul className="flex flex-1 items-center justify-end gap-3">
             <li>
               <Link
-                href="/signin"
-                className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"
+                href="/contact"
+                className="btn-sm bg-gray-800 text-gray-100 shadow-sm transition hover:bg-gray-900"
               >
-                Login
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/signup"
-                className="btn-sm bg-gray-800 text-gray-200 shadow-sm hover:bg-gray-900"
-              >
-                Register
+                Contact Us
               </Link>
             </li>
           </ul>
