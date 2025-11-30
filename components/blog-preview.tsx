@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { ArrowUpRight, Newspaper } from "lucide-react";
 
-import { blogPosts } from "@/lib/blog-posts";
+import { getAllBlogPosts } from "@/lib/blog-posts";
 
-export default function BlogPreview() {
+export default async function BlogPreview() {
+  const posts = await getAllBlogPosts();
+  const latest = posts.slice(0, 3);
+
   return (
     <section className="relative pb-16 pt-12 md:pb-20 md:pt-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -21,11 +24,9 @@ export default function BlogPreview() {
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {blogPosts.slice(0, 3).map((post) => (
+          {latest.map((post) => (
             <article key={post.slug} className="flex flex-col rounded-2xl border border-gray-200 bg-white/90 p-5 shadow-sm">
-              <div className="text-xs font-semibold uppercase tracking-wide text-[var(--color-brand-700)]">
-                {post.category}
-              </div>
+              <div className="text-xs font-semibold uppercase tracking-wide text-[var(--color-brand-700)]">{post.category}</div>
               <h3 className="mt-3 text-xl font-semibold text-gray-900">
                 <Link href={`/blog/${post.slug}`} className="hover:text-[var(--color-brand-700)]">
                   {post.title}

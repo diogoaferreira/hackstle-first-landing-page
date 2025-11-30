@@ -89,3 +89,28 @@ We're an Italian developer/designer duo creating high-quality design/code resour
 
 If you would like to know when we release new resources, you can follow [@pacovitiello](https://x.com/pacovitiello) and [@DavidePacilio](https://x.com/DavidePacilio) on X, or you can subscribe to our [newsletter](https://cruip.com/newsletter/).
 
+
+## Blog content workflow
+
+Blog posts are sourced from Markdown files in `content/blog`. Each file uses simple front matter for metadata:
+
+```
+---
+title: Post title
+summary: Short teaser copy
+date: 2024-12-05
+readingTime: 5 min read
+category: Darkweb Monitoring
+tags:
+  - Darkweb
+  - Triage
+---
+
+## Section heading
+Body content...
+```
+
+- Add a new `.md` file in `content/blog` for each post. The filename becomes the slug (e.g., `post-title.md` renders at `/blog/post-title`).
+- Sections are built from `##` headings and the paragraphs beneath them.
+- The blog listing and individual post pages revalidate every 5 minutes by default.
+- For on-demand refreshes after adding a file, call `/api/revalidate?secret=YOUR_TOKEN` (optionally include `&slug=post-title`) with `REVALIDATE_SECRET` configured in the environment.

@@ -3,19 +3,23 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, CalendarClock, Tags } from "lucide-react";
 
-import { blogPosts, getBlogPost } from "@/lib/blog-posts";
+import { getBlogPost, getBlogSlugs } from "@/lib/blog-posts";
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+export const revalidate = 300;
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({ slug: post.slug }));
+  const slugs = await getBlogSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = getBlogPost(slug);
+  const post = await getBlogPost(slug);
 
   if (!post) {
     return {
@@ -31,7 +35,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const post = getBlogPost(slug);
+  const post = await getBlogPost(slug);
 
   if (!post) {
     notFound();

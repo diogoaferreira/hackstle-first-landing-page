@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, CalendarClock, Tags } from "lucide-react";
 
-import { blogPosts } from "@/lib/blog-posts";
+import { getAllBlogPosts } from "@/lib/blog-posts";
 
 export const metadata = {
   title: "Hackstle Blog | Darkweb intelligence insights",
@@ -9,7 +9,11 @@ export const metadata = {
     "Latest posts on darkweb monitoring, CVE correlation, and third-party incident response from the Hackstle team.",
 };
 
-export default function BlogPage() {
+export const revalidate = 300;
+
+export default async function BlogPage() {
+  const blogPosts = await getAllBlogPosts();
+
   return (
     <section
       className="relative pb-16 pt-32 md:pb-24 md:pt-40"
