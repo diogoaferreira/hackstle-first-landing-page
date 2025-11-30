@@ -1,18 +1,17 @@
 import Image from "next/image";
 import {
   Bug,
+  Cpu,
   Eye,
+  FileWarning,
   KeyRound,
   Network,
   Radar,
+  ShieldAlert,
   Workflow,
 } from "lucide-react";
 import PlanetImg from "@/public/images/planet.png";
 import PlanetOverlayImg from "@/public/images/planet-overlay.svg";
-import PlanetTagImg01 from "@/public/images/planet-tag-01.png";
-import PlanetTagImg02 from "@/public/images/planet-tag-02.png";
-import PlanetTagImg03 from "@/public/images/planet-tag-03.png";
-import PlanetTagImg04 from "@/public/images/planet-tag-04.png";
 
 export default function FeaturesPlanet() {
   return (
@@ -45,34 +44,62 @@ export default function FeaturesPlanet() {
                     alt="Planet decoration"
                   />
                   <div>
-                    <Image
-                      className="absolute -left-28 top-16 z-10 animate-[float_4s_ease-in-out_infinite_both] opacity-80 transition-opacity duration-500"
-                      src={PlanetTagImg01}
-                      width={253}
-                      height={56}
-                      alt="Tag 01"
-                    />
-                    <Image
-                      className="absolute left-56 top-7 z-10 animate-[float_4s_ease-in-out_infinite_1s_both] opacity-30 transition-opacity duration-500"
-                      src={PlanetTagImg02}
-                      width={241}
-                      height={56}
-                      alt="Tag 02"
-                    />
-                    <Image
-                      className="absolute -left-20 bottom-24 z-10 animate-[float_4s_ease-in-out_infinite_2s_both] opacity-25 transition-opacity duration-500"
-                      src={PlanetTagImg03}
-                      width={243}
-                      height={56}
-                      alt="Tag 03"
-                    />
-                    <Image
-                      className="absolute bottom-32 left-64 z-10 animate-[float_4s_ease-in-out_infinite_3s_both] opacity-80 transition-opacity duration-500"
-                      src={PlanetTagImg04}
-                      width={251}
-                      height={56}
-                      alt="Tag 04"
-                    />
+                    <div className="absolute -left-32 top-12 z-10 animate-[float_4s_ease-in-out_infinite_both] opacity-80 transition-opacity duration-500">
+                      <div className="flex items-center gap-3 rounded-full border border-white/10 bg-gray-900/80 px-4 py-2 text-left shadow-lg backdrop-blur">
+                        <ShieldAlert
+                          className="h-4 w-4 text-[var(--color-brand-500)]"
+                          strokeWidth={1.75}
+                        />
+                        <div className="leading-tight">
+                          <div className="text-[11px] text-gray-400">Critical port opened</div>
+                          <div className="text-sm font-semibold text-gray-50">
+                            Port 21 on edge-gateway
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute left-52 top-6 z-10 animate-[float_4s_ease-in-out_infinite_1s_both] opacity-80 transition-opacity duration-500">
+                      <div className="flex items-center gap-3 rounded-full border border-white/10 bg-gray-900/80 px-4 py-2 text-left shadow-lg backdrop-blur">
+                        <FileWarning
+                          className="h-4 w-4 text-[var(--color-brand-500)]"
+                          strokeWidth={1.75}
+                        />
+                        <div className="leading-tight">
+                          <div className="text-[11px] text-gray-400">CVE detected</div>
+                          <div className="text-sm font-semibold text-gray-50">
+                            CVE-2024-5039 on app-core
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute -left-24 bottom-24 z-10 animate-[float_4s_ease-in-out_infinite_2s_both] opacity-70 transition-opacity duration-500">
+                      <div className="flex items-center gap-3 rounded-full border border-white/10 bg-gray-900/80 px-4 py-2 text-left shadow-lg backdrop-blur">
+                        <KeyRound
+                          className="h-4 w-4 text-[var(--color-brand-500)]"
+                          strokeWidth={1.75}
+                        />
+                        <div className="leading-tight">
+                          <div className="text-[11px] text-gray-400">Leaked credentials</div>
+                          <div className="text-sm font-semibold text-gray-50">
+                            finance-backoffice dump
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute bottom-32 left-64 z-10 animate-[float_4s_ease-in-out_infinite_3s_both] opacity-80 transition-opacity duration-500">
+                      <div className="flex items-center gap-3 rounded-full border border-white/10 bg-gray-900/80 px-4 py-2 text-left shadow-lg backdrop-blur">
+                        <Cpu
+                          className="h-4 w-4 text-[var(--color-brand-500)]"
+                          strokeWidth={1.75}
+                        />
+                        <div className="leading-tight">
+                          <div className="text-[11px] text-gray-400">Technologies discovered</div>
+                          <div className="text-sm font-semibold text-gray-50">
+                            New EDR &amp; SSO provider
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
