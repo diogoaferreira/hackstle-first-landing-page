@@ -122,3 +122,5 @@ The contact page uses Cloudflare Turnstile and posts validated submissions to a 
 - `NEXT_PUBLIC_TURNSTILE_SITE_KEY` – Turnstile site key for the client widget.
 - `TURNSTILE_SECRET_KEY` – Turnstile secret key for server-side verification.
 - `DISCORD_WEBHOOK_URL` – Webhook URL that will receive contact submissions.
+
+For local development where Turnstile isn’t convenient, set `NEXT_PUBLIC_TURNSTILE_DISABLED=true` (and optionally `TURNSTILE_DISABLED=true` for server-only environments). This bypasses the widget/verification while still posting submissions to Discord for testing.

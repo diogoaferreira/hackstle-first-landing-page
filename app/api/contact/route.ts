@@ -10,6 +10,9 @@ type ContactBody = {
 };
 
 const turnstileVerifyUrl = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+const turnstileDisabled =
+  process.env.TURNSTILE_DISABLED === "true" ||
+  process.env.NEXT_PUBLIC_TURNSTILE_DISABLED === "true";
 
 async function validateTurnstile(token: string | null) {
   const secret = process.env.TURNSTILE_SECRET_KEY;
@@ -75,13 +78,16 @@ async function sendToDiscord(body: ContactBody) {
   }
 
   const fields = [
+    turnstileDisabled
+      ? { name: "Turnstile", value: "Disabled for development", inline: true }
+      : null,
     { name: "Name", value: body.name || "N/A", inline: true },
     { name: "Email", value: body.email || "N/A", inline: true },
     { name: "Company", value: body.company || "N/A", inline: true },
     { name: "Role", value: body.role || "N/A", inline: true },
     { name: "Briefing", value: body.briefing ? "Yes" : "No", inline: true },
     { name: "Message", value: body.message || "N/A" },
-  ];
+  ].filter(Boolean);
 
   const payload = {
     content: "📨 New Hackstle contact submission",
@@ -120,10 +126,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: validation.error }, { status: 422 });
   }
 
-  const verification = await validateTurnstile(turnstileToken);
+  if (!turnstileDisabled) {
+    const verification = await validateTurnstile(turnstileToken);
 
-  if (!verification.success) {
-    return NextResponse.json({ error: verification.message }, { status: 422 });
+    if (!verification.success) {
+      return NextResponse.json({ error: verification.message }, { status: 422 });
+    }
   }
 
   try {

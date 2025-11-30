@@ -9,6 +9,7 @@ const TURNSTILE_SCRIPT_SRC =
   "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
 
 const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+const turnstileDisabled = process.env.NEXT_PUBLIC_TURNSTILE_DISABLED === "true";
 
 export function ContactForm() {
   const [status, setStatus] = useState<SubmissionState>("idle");
@@ -18,6 +19,11 @@ export function ContactForm() {
   const widgetIdRef = useRef<string | null>(null);
 
   useEffect(() => {
+    if (turnstileDisabled) {
+      setError(null);
+      return;
+    }
+
     if (!siteKey) {
       setError("Turnstile site key is missing. Set NEXT_PUBLIC_TURNSTILE_SITE_KEY.");
       return;
@@ -73,7 +79,7 @@ export function ContactForm() {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (!turnstileToken) {
+    if (!turnstileDisabled && !turnstileToken) {
       setError("Please complete the Turnstile check before submitting.");
       return;
     }
@@ -87,7 +93,7 @@ export function ContactForm() {
       role: formData.get("role"),
       message: formData.get("message"),
       briefing: formData.get("briefing") === "on",
-      turnstileToken,
+      turnstileToken: turnstileDisabled ? "dev-disabled" : turnstileToken,
     };
 
     setStatus("submitting");
@@ -112,11 +118,13 @@ export function ContactForm() {
 
       setStatus("success");
       setTurnstileToken(null);
-      const turnstile = (window as typeof window & { turnstile?: any }).turnstile;
-      if (turnstile && widgetIdRef.current) {
-        turnstile.reset(widgetIdRef.current);
-      }
-      event.currentTarget.reset();
+          if (!turnstileDisabled) {
+            const turnstile = (window as typeof window & { turnstile?: any }).turnstile;
+            if (turnstile && widgetIdRef.current) {
+              turnstile.reset(widgetIdRef.current);
+            }
+          }
+          event.currentTarget.reset();
     } catch (fetchError) {
       setStatus("error");
       setError("Unable to submit right now. Please try again in a moment.");
@@ -206,7 +214,13 @@ export function ContactForm() {
         </div>
 
         <div className="grid gap-4">
-          <div ref={widgetRef} className="min-h-[65px]" />
+          {turnstileDisabled ? (
+            <p className="text-sm text-gray-600">
+              Turnstile is disabled for development. Submissions will send without a challenge.
+            </p>
+          ) : (
+            <div ref={widgetRef} className="min-h-[65px]" />
+          )}
           {error ? (
             <p className="text-sm text-red-600">{error}</p>
           ) : status === "success" ? (
