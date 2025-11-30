@@ -1,4 +1,12 @@
 import Image from "next/image";
+import {
+  Bug,
+  Eye,
+  KeyRound,
+  Network,
+  Radar,
+  Workflow,
+} from "lucide-react";
 import PlanetImg from "@/public/images/planet.png";
 import PlanetOverlayImg from "@/public/images/planet-overlay.svg";
 import PlanetTagImg01 from "@/public/images/planet-tag-01.png";
@@ -74,20 +82,10 @@ export default function FeaturesPlanet() {
           <div className="grid overflow-hidden sm:grid-cols-2 lg:grid-cols-3 *:relative *:p-6 *:before:absolute *:before:bg-gray-800 *:before:[block-size:100vh] *:before:[inline-size:1px] *:before:[inset-block-start:0] *:before:[inset-inline-start:-1px] *:after:absolute *:after:bg-gray-800 *:after:[block-size:1px] *:after:[inline-size:100vw] *:after:[inset-block-start:-1px] *:after:[inset-inline-start:0] md:*:p-10">
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
-                <svg
+                <Eye
                   className="h-4 w-4 text-[var(--color-brand-500)]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
-                  stroke="currentColor"
                   strokeWidth={1.75}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M3 10c1.5-3 3.8-5 7-5s5.5 2 7 5c-1.5 3-3.8 5-7 5s-5.5-2-7-5Z" />
-                  <circle cx="10" cy="10" r="2.75" />
-                  <path d="M10 5.25v1.5M10 13.25v1.5M6.25 10h-1.5M15.25 10h-1.5" />
-                </svg>
+                />
                 <span>Darkweb Threat Monitoring</span>
               </h3>
               <p className="text-[15px] text-gray-400">
@@ -98,20 +96,10 @@ export default function FeaturesPlanet() {
             </article>
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
-                <svg
+                <KeyRound
                   className="h-4 w-4 text-[var(--color-brand-500)]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
-                  stroke="currentColor"
                   strokeWidth={1.75}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M4.5 6.25 10 3.5l5.5 2.75v4c0 3.75-2.25 6-5.5 6s-5.5-2.25-5.5-6v-4Z" />
-                  <path d="M10 8.75a2.1 2.1 0 0 0-2 2.25c0 1.5 2 3.5 2 3.5s2-2 2-3.5a2.1 2.1 0 0 0-2-2.25Z" />
-                  <path d="M10 11v.01" />
-                </svg>
+                />
                 <span>Leaked Credential Triage</span>
               </h3>
               <p className="text-[15px] text-gray-400">
@@ -122,23 +110,10 @@ export default function FeaturesPlanet() {
             </article>
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
-                <svg
+                <Bug
                   className="h-4 w-4 text-[var(--color-brand-500)]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
-                  stroke="currentColor"
                   strokeWidth={1.75}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="10" cy="10" r="3" />
-                  <path d="M10 5V3.5M10 16.5V15" />
-                  <path d="M6.5 6.5 5.25 5.25M13.5 6.5 14.75 5.25" />
-                  <path d="M6 10H4.25M14 10h1.75" />
-                  <path d="M6.5 13.5 5.25 14.75M13.5 13.5 14.75 14.75" />
-                  <path d="m7.5 11.5 1-1 1.5 1.5 1.75-1.75 1 1" />
-                </svg>
+                />
                 <span>CVE &amp; Exploit Correlation</span>
               </h3>
               <p className="text-[15px] text-gray-400">
@@ -149,21 +124,10 @@ export default function FeaturesPlanet() {
             </article>
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
-                <svg
+                <Radar
                   className="h-4 w-4 text-[var(--color-brand-500)]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
-                  stroke="currentColor"
                   strokeWidth={1.75}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="10" cy="10" r="5.75" />
-                  <path d="M10 4.25v3.5l2.75 2.25" />
-                  <path d="M10 10a3 3 0 0 1-3 3" />
-                  <path d="M10 10a4.5 4.5 0 0 1 4.5 4.5" />
-                </svg>
+                />
                 <span>Attack Surface Management</span>
               </h3>
               <p className="text-[15px] text-gray-400">
@@ -174,21 +138,10 @@ export default function FeaturesPlanet() {
             </article>
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
-                <svg
+                <Network
                   className="h-4 w-4 text-[var(--color-brand-500)]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
-                  stroke="currentColor"
                   strokeWidth={1.75}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M6.5 8.25 8.75 6a2.25 2.25 0 0 1 3.25 3.1l-.75.75" />
-                  <path d="M13.5 11.75 11.25 14a2.25 2.25 0 0 1-3.25-3.1l.75-.75" />
-                  <path d="m12.5 10.5 1.5 1.75 2-3.25" />
-                  <path d="M14.5 6.75H17" />
-                </svg>
+                />
                 <span>Third-Party Incident Watch</span>
               </h3>
               <p className="text-[15px] text-gray-400">
@@ -198,24 +151,10 @@ export default function FeaturesPlanet() {
             </article>
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
-                <svg
+                <Workflow
                   className="h-4 w-4 text-[var(--color-brand-500)]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 20"
-                  stroke="currentColor"
                   strokeWidth={1.75}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect x="3.25" y="4.5" width="5" height="4.5" rx="1.25" />
-                  <rect x="11.75" y="4.5" width="5" height="4.5" rx="1.25" />
-                  <rect x="7.5" y="11" width="5" height="4.5" rx="1.25" />
-                  <path d="M8.25 6.75h3.5" />
-                  <path d="M13.5 6.75h1" />
-                  <path d="M10 9v2.25L8 13" />
-                  <path d="M12 10.75v1.5l2 1.5" />
-                </svg>
+                />
                 <span>Actionable Workflows</span>
               </h3>
               <p className="text-[15px] text-gray-400">
