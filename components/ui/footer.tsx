@@ -150,7 +150,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
             <ul className="flex gap-1">
               <li>
                 <Link
-                  className="flex items-center justify-center text-blue-500 transition hover:text-blue-600"
+                  className="flex items-center justify-center text-[var(--color-brand-500)] transition hover:text-[var(--color-brand-600)]"
                   href="#0"
                   aria-label="Twitter"
                 >
@@ -165,7 +165,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
               </li>
               <li>
                 <Link
-                  className="flex items-center justify-center text-blue-500 transition hover:text-blue-600"
+                  className="flex items-center justify-center text-[var(--color-brand-500)] transition hover:text-[var(--color-brand-600)]"
                   href="#0"
                   aria-label="Medium"
                 >
@@ -180,7 +180,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
               </li>
               <li>
                 <Link
-                  className="flex items-center justify-center text-blue-500 transition hover:text-blue-600"
+                  className="flex items-center justify-center text-[var(--color-brand-500)] transition hover:text-[var(--color-brand-600)]"
                   href="#0"
                   aria-label="Github"
                 >
@@ -200,13 +200,13 @@ export default function Footer({ border = false }: { border?: boolean }) {
 
       {/* Big text */}
       <div className="relative -mt-16 h-60 w-full" aria-hidden="true">
-        <div className="pointer-events-none absolute left-1/2 -z-10 -translate-x-1/2 text-center text-[348px] font-bold leading-none before:bg-linear-to-b before:from-gray-200 before:to-gray-100/30 before:to-80% before:bg-clip-text before:text-transparent before:content-['Simple'] after:absolute after:inset-0 after:bg-gray-300/70 after:bg-clip-text after:text-transparent after:mix-blend-darken after:content-['Simple'] after:[text-shadow:0_1px_0_white]"></div>
+        <div className="pointer-events-none absolute left-1/2 -z-10 -translate-x-1/2 text-center text-[348px] font-bold leading-none before:bg-linear-to-b before:from-gray-200 before:to-gray-100/30 before:to-80% before:bg-clip-text before:text-transparent before:content-['Hackstle'] after:absolute after:inset-0 after:bg-gray-300/70 after:bg-clip-text after:text-transparent after:mix-blend-darken after:content-['Hackstle'] after:[text-shadow:0_1px_0_white]"></div>
         {/* Glow */}
         <div
           className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2/3"
           aria-hidden="true"
         >
-          <div className="h-56 w-56 rounded-full border-[20px] border-blue-700 blur-[80px]"></div>
+          <div className="h-56 w-56 rounded-full border-[20px] border-[var(--color-brand-700)] blur-[80px]"></div>
         </div>
       </div>
     </footer>

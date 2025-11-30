@@ -1,21 +1,26 @@
 export const metadata = {
-  title: "Home - Simple",
-  description: "Page description",
+  title: "Hackstle | Darkweb Threat Intelligence",
+  description:
+    "Hackstle monitors darkweb chatter, leaked credentials, CVEs, and exposed assets to help teams act on threats fast.",
 };
 
 import Hero from "@/components/hero-home";
+import BlogPreview from "@/components/blog-preview";
 import BusinessCategories from "@/components/business-categories";
 import FeaturesPlanet from "@/components/features-planet";
-import LargeTestimonial from "@/components/large-testimonial";
 import Cta from "@/components/cta";
+import Differentiators from "@/components/differentiators";
+import Certifications from "@/components/certifications";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <BlogPreview />
       <BusinessCategories />
       <FeaturesPlanet />
-      <LargeTestimonial />
+      <Differentiators />
+      <Certifications />
       <Cta />
     </>
   );
