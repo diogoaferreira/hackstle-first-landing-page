@@ -84,9 +84,9 @@ export default function FeaturesPlanet() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <path d="M3 10c2.5-3.333 5-5 7-5s4.5 1.667 7 5c-2.5 3.333-5 5-7 5s-4.5-1.667-7-5Z" />
-                  <circle cx="10" cy="10" r="2.25" />
-                  <path d="M13.5 6.5 15 5m-10 0 1.5 1.5M10 4.5V3" />
+                  <path d="M3 10c1.5-3 3.8-5 7-5s5.5 2 7 5c-1.5 3-3.8 5-7 5s-5.5-2-7-5Z" />
+                  <circle cx="10" cy="10" r="2.75" />
+                  <path d="M10 5.25v1.5M10 13.25v1.5M6.25 10h-1.5M15.25 10h-1.5" />
                 </svg>
                 <span>Darkweb Threat Monitoring</span>
               </h3>
@@ -108,11 +108,9 @@ export default function FeaturesPlanet() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <rect x="4.5" y="4" width="11" height="12" rx="2" />
-                  <path d="M4.5 8h11" />
-                  <path d="M8 4V3a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v1" />
-                  <circle cx="10" cy="11.5" r="2" />
-                  <path d="M10 12.5v1.5" />
+                  <path d="M4.5 6.25 10 3.5l5.5 2.75v4c0 3.75-2.25 6-5.5 6s-5.5-2.25-5.5-6v-4Z" />
+                  <path d="M10 8.75a2.1 2.1 0 0 0-2 2.25c0 1.5 2 3.5 2 3.5s2-2 2-3.5a2.1 2.1 0 0 0-2-2.25Z" />
+                  <path d="M10 11v.01" />
                 </svg>
                 <span>Leaked Credential Triage</span>
               </h3>
@@ -134,11 +132,12 @@ export default function FeaturesPlanet() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <circle cx="6" cy="6" r="2.25" />
-                  <circle cx="14" cy="6" r="2.25" />
-                  <circle cx="10" cy="14" r="2.25" />
-                  <path d="m7.5 7.5 2 2m3-2-2.5 2.5" />
-                  <path d="M6 8.5v4M14 8.5v4" />
+                  <circle cx="10" cy="10" r="3" />
+                  <path d="M10 5V3.5M10 16.5V15" />
+                  <path d="M6.5 6.5 5.25 5.25M13.5 6.5 14.75 5.25" />
+                  <path d="M6 10H4.25M14 10h1.75" />
+                  <path d="M6.5 13.5 5.25 14.75M13.5 13.5 14.75 14.75" />
+                  <path d="m7.5 11.5 1-1 1.5 1.5 1.75-1.75 1 1" />
                 </svg>
                 <span>CVE &amp; Exploit Correlation</span>
               </h3>
@@ -160,8 +159,10 @@ export default function FeaturesPlanet() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <path d="M10 2.5 4 6.25v3.5C4 14 6.5 16.75 10 17.5c3.5-.75 6-3.5 6-7.75v-3.5L10 2.5Z" />
-                  <path d="M7.25 10.25 9 12l3.5-3.5" />
+                  <circle cx="10" cy="10" r="5.75" />
+                  <path d="M10 4.25v3.5l2.75 2.25" />
+                  <path d="M10 10a3 3 0 0 1-3 3" />
+                  <path d="M10 10a4.5 4.5 0 0 1 4.5 4.5" />
                 </svg>
                 <span>Attack Surface Management</span>
               </h3>
@@ -183,9 +184,10 @@ export default function FeaturesPlanet() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <path d="M5.5 6.5a4.5 4.5 0 1 1 9 0v2.25" />
-                  <rect x="3.5" y="8.75" width="13" height="7.25" rx="2.25" />
-                  <path d="M7.25 12.25a2.75 2.75 0 0 0 5.5 0" />
+                  <path d="M6.5 8.25 8.75 6a2.25 2.25 0 0 1 3.25 3.1l-.75.75" />
+                  <path d="M13.5 11.75 11.25 14a2.25 2.25 0 0 1-3.25-3.1l.75-.75" />
+                  <path d="m12.5 10.5 1.5 1.75 2-3.25" />
+                  <path d="M14.5 6.75H17" />
                 </svg>
                 <span>Third-Party Incident Watch</span>
               </h3>
@@ -206,10 +208,13 @@ export default function FeaturesPlanet() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <path d="M4.5 5.5h4.75L12 3.25l2.75 2.25H17" />
-                  <path d="M4.5 10h5" />
-                  <path d="M7 10v-1.5" />
-                  <path d="M4.5 14.5h4.75L12 12.25l2.75 2.25H17" />
+                  <rect x="3.25" y="4.5" width="5" height="4.5" rx="1.25" />
+                  <rect x="11.75" y="4.5" width="5" height="4.5" rx="1.25" />
+                  <rect x="7.5" y="11" width="5" height="4.5" rx="1.25" />
+                  <path d="M8.25 6.75h3.5" />
+                  <path d="M13.5 6.75h1" />
+                  <path d="M10 9v2.25L8 13" />
+                  <path d="M12 10.75v1.5l2 1.5" />
                 </svg>
                 <span>Actionable Workflows</span>
               </h3>
