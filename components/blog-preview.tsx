@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Newspaper } from "lucide-react";
+import { ArrowUpRight, CalendarClock, Newspaper } from "lucide-react";
 
 import { getAllBlogPosts } from "@/lib/blog-posts";
 
@@ -33,6 +33,10 @@ export default async function BlogPreview() {
                 </Link>
               </h3>
               <p className="mt-2 text-sm text-gray-700">{post.summary}</p>
+              <div className="mt-3 inline-flex items-center gap-2 text-sm text-gray-600">
+                <CalendarClock className="h-4 w-4 text-gray-400" />
+                <span>{post.date}</span>
+              </div>
               <div className="mt-auto pt-4 text-sm text-gray-600">{post.readingTime}</div>
             </article>
           ))}
