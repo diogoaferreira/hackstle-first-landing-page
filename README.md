@@ -114,3 +114,15 @@ Body content...
 - Sections are built from `##` headings and the paragraphs beneath them.
 - The blog listing and individual post pages revalidate every 5 minutes by default.
 - For on-demand refreshes after adding a file, call `/api/revalidate?secret=YOUR_TOKEN` (optionally include `&slug=post-title`) with `REVALIDATE_SECRET` configured in the environment.
+
+## Contact form delivery
+
+The contact page uses Cloudflare Turnstile and SMTP to deliver submissions to david@hackstle.com. Set the following environment variables:
+
+- `NEXT_PUBLIC_TURNSTILE_SITE_KEY` – Turnstile site key for the client widget.
+- `TURNSTILE_SECRET_KEY` – Turnstile secret key for server-side verification.
+- `SMTP_HOST` – SMTP server host.
+- `SMTP_PORT` – SMTP port (defaults to 587 if unset).
+- `SMTP_SECURE` – Set to `true` when using a TLS port like 465.
+- `SMTP_USER` and `SMTP_PASS` – SMTP credentials.
+- `CONTACT_FROM` – Optional “from” address (defaults to `SMTP_USER` or `no-reply@hackstle.com`).
