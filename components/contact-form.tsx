@@ -23,13 +23,13 @@ export function ContactForm() {
       return;
     }
 
-    const existingScript = document.querySelector(
-      `script[src="${TURNSTILE_SCRIPT_SRC}"]`,
-    ) as HTMLScriptElement | null;
-
     const renderWidget = () => {
       const turnstile = (window as typeof window & { turnstile?: any }).turnstile;
-      if (!turnstile || !widgetRef.current || widgetIdRef.current) return;
+      if (!turnstile || !widgetRef.current) return;
+
+      if (widgetIdRef.current) {
+        turnstile.reset(widgetIdRef.current);
+      }
 
       widgetIdRef.current = turnstile.render(widgetRef.current, {
         sitekey: siteKey,
@@ -40,13 +40,19 @@ export function ContactForm() {
       });
     };
 
+    const existingScript = document.querySelector(
+      `script[src="${TURNSTILE_SCRIPT_SRC}"]`,
+    ) as HTMLScriptElement | null;
+
     if (existingScript) {
       if ((window as typeof window & { turnstile?: any }).turnstile) {
         renderWidget();
       } else {
         existingScript.addEventListener("load", renderWidget);
       }
-      return;
+      return () => {
+        existingScript.removeEventListener("load", renderWidget);
+      };
     }
 
     const script = document.createElement("script");
@@ -54,7 +60,10 @@ export function ContactForm() {
     script.async = true;
     script.defer = true;
     script.onload = renderWidget;
-    document.body.appendChild(script);
+    script.onerror = () => {
+      setError("Turnstile failed to load. Please refresh and try again.");
+    };
+    document.head.appendChild(script);
 
     return () => {
       script.onload = null;

@@ -1,5 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 
+type ContactBody = {
+  name?: string | null;
+  email?: string | null;
+  company?: string | null;
+  role?: string | null;
+  message?: string | null;
+  briefing?: boolean;
+};
+
 const turnstileVerifyUrl = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
 async function validateTurnstile(token: string | null) {
@@ -30,14 +39,35 @@ async function validateTurnstile(token: string | null) {
   return { success: true };
 }
 
-async function sendToDiscord(body: {
-  name?: string | null;
-  email?: string | null;
-  company?: string | null;
-  role?: string | null;
-  message?: string | null;
-  briefing?: boolean;
-}) {
+function validateBody(body: ContactBody) {
+  const name = typeof body.name === "string" ? body.name.trim() : "";
+  const email = typeof body.email === "string" ? body.email.trim() : "";
+  const company = typeof body.company === "string" ? body.company.trim() : "";
+  const role = typeof body.role === "string" ? body.role.trim() : "";
+  const message = typeof body.message === "string" ? body.message.trim() : "";
+
+  if (!name || !email || !message) {
+    return {
+      ok: false,
+      error: "Name, email, and message are required.",
+    } as const;
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    return {
+      ok: false,
+      error: "Please provide a valid work email.",
+    } as const;
+  }
+
+  return {
+    ok: true,
+    data: { name, email, company, role, message, briefing: Boolean(body.briefing) },
+  } as const;
+}
+
+async function sendToDiscord(body: ContactBody) {
   const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
 
   if (!webhookUrl) {
@@ -85,6 +115,11 @@ export async function POST(request: NextRequest) {
 
   const { turnstileToken, ...body } = payload;
 
+  const validation = validateBody(body);
+  if (!validation.ok) {
+    return NextResponse.json({ error: validation.error }, { status: 422 });
+  }
+
   const verification = await validateTurnstile(turnstileToken);
 
   if (!verification.success) {
@@ -92,7 +127,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    await sendToDiscord(body);
+    await sendToDiscord(validation.data);
   } catch (error) {
     return NextResponse.json(
       {
