@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
 
 const turnstileVerifyUrl = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
@@ -31,7 +30,7 @@ async function validateTurnstile(token: string | null) {
   return { success: true };
 }
 
-async function sendEmail(body: {
+async function sendToDiscord(body: {
   name?: string | null;
   email?: string | null;
   company?: string | null;
@@ -39,45 +38,46 @@ async function sendEmail(body: {
   message?: string | null;
   briefing?: boolean;
 }) {
-  const host = process.env.SMTP_HOST;
-  const port = Number(process.env.SMTP_PORT || 587);
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  const secure = process.env.SMTP_SECURE === "true";
-  const from = process.env.CONTACT_FROM || user || "no-reply@hackstle.com";
-  const to = "david@hackstle.com";
+  const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
 
-  if (!host || !user || !pass) {
-    throw new Error("SMTP credentials are not fully configured.");
+  if (!webhookUrl) {
+    throw new Error("Discord webhook URL is not configured.");
   }
 
-  const transporter = nodemailer.createTransport({
-    host,
-    port,
-    secure,
-    auth: {
-      user,
-      pass,
+  const fields = [
+    { name: "Name", value: body.name || "N/A", inline: true },
+    { name: "Email", value: body.email || "N/A", inline: true },
+    { name: "Company", value: body.company || "N/A", inline: true },
+    { name: "Role", value: body.role || "N/A", inline: true },
+    { name: "Briefing", value: body.briefing ? "Yes" : "No", inline: true },
+    { name: "Message", value: body.message || "N/A" },
+  ];
+
+  const payload = {
+    content: "📨 New Hackstle contact submission",
+    embeds: [
+      {
+        title: `Contact request${body.name ? ` from ${body.name}` : ""}`,
+        description: "Turnstile-validated submission from the Hackstle site.",
+        fields,
+        timestamp: new Date().toISOString(),
+        color: 0x8c52ff,
+      },
+    ],
+    allowed_mentions: { parse: [] },
+  };
+
+  const response = await fetch(webhookUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
     },
+    body: JSON.stringify(payload),
   });
 
-  const subject = `New Hackstle contact request${body.name ? ` from ${body.name}` : ""}`;
-  const briefingLine = body.briefing ? "Requested briefing: Yes" : "Requested briefing: No";
-
-  await transporter.sendMail({
-    from,
-    to,
-    subject,
-    text: `Name: ${body.name || "N/A"}
-Email: ${body.email || "N/A"}
-Company: ${body.company || "N/A"}
-Role: ${body.role || "N/A"}
-${briefingLine}
-
-Message:
-${body.message || "N/A"}
-`,
-  });
+  if (!response.ok) {
+    throw new Error("Unable to deliver contact request to Discord webhook.");
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -92,10 +92,15 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    await sendEmail(body);
+    await sendToDiscord(body);
   } catch (error) {
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Unable to send email." },
+      {
+        error:
+          error instanceof Error
+            ? error.message
+            : "Unable to deliver your contact request at this time.",
+      },
       { status: 500 },
     );
   }

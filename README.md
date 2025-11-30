@@ -117,12 +117,8 @@ Body content...
 
 ## Contact form delivery
 
-The contact page uses Cloudflare Turnstile and SMTP to deliver submissions to david@hackstle.com. Set the following environment variables:
+The contact page uses Cloudflare Turnstile and posts validated submissions to a Discord webhook for david@hackstle.com to triage. Set the following environment variables:
 
 - `NEXT_PUBLIC_TURNSTILE_SITE_KEY` – Turnstile site key for the client widget.
 - `TURNSTILE_SECRET_KEY` – Turnstile secret key for server-side verification.
-- `SMTP_HOST` – SMTP server host.
-- `SMTP_PORT` – SMTP port (defaults to 587 if unset).
-- `SMTP_SECURE` – Set to `true` when using a TLS port like 465.
-- `SMTP_USER` and `SMTP_PASS` – SMTP credentials.
-- `CONTACT_FROM` – Optional “from” address (defaults to `SMTP_USER` or `no-reply@hackstle.com`).
+- `DISCORD_WEBHOOK_URL` – Webhook URL that will receive contact submissions.
