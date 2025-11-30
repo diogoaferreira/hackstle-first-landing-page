@@ -38,10 +38,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <article className="relative pb-16 pt-32 md:pb-24 md:pt-40">
+    <article
+      className="relative pb-16 pt-32 md:pb-24 md:pt-40"
+      data-aos="fade-up"
+    >
       <div className="absolute inset-x-0 top-0 -z-10 h-64 bg-linear-to-b from-[var(--color-brand-50)]/70 to-transparent" />
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <div className="mb-10 flex items-center justify-between text-sm text-gray-600">
+        <div
+          className="mb-10 flex items-center justify-between text-sm text-gray-600"
+          data-aos="fade-up"
+          data-aos-delay="50"
+        >
           <Link href="/blog" className="inline-flex items-center gap-2 font-semibold text-[var(--color-brand-700)]">
             <ArrowLeft className="h-4 w-4" />
             Back to Blog
@@ -61,19 +68,32 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </div>
 
-        <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">{post.title}</h1>
-        <p className="mb-10 text-lg text-gray-700">{post.summary}</p>
+        <h1
+          className="mb-4 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          {post.title}
+        </h1>
+        <p className="mb-10 text-lg text-gray-700" data-aos="fade-up" data-aos-delay="130">
+          {post.summary}
+        </p>
 
-        <div className="space-y-10">
-          {post.sections.map((section) => (
-            <section key={section.heading}>
+        <div className="space-y-6">
+          {post.sections.map((section, index) => (
+            <section
+              key={section.heading}
+              className="rounded-2xl bg-white/90 p-6 shadow-sm shadow-black/[0.03]"
+              data-aos="fade-up"
+              data-aos-delay={150 + index * 75}
+            >
               <h2 className="mb-3 text-xl font-semibold text-gray-900">{section.heading}</h2>
               <p className="text-gray-700">{section.body}</p>
             </section>
           ))}
         </div>
 
-        <div className="mt-12 flex flex-wrap gap-2">
+        <div className="mt-12 flex flex-wrap gap-2" data-aos="fade-up" data-aos-delay="150">
           {post.tags.map((tag) => (
             <span
               key={tag}
