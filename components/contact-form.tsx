@@ -108,23 +108,30 @@ export function ContactForm() {
         body: JSON.stringify(payload),
       });
 
-      const result = await response.json();
+      let result: { error?: string } | null = null;
+      try {
+        result = await response.json();
+      } catch {
+        // If the response cannot be parsed, fall back to status handling below.
+      }
 
       if (!response.ok) {
         setStatus("error");
-        setError(result.error || "Something went wrong. Please try again.");
+        setError(result?.error || "Something went wrong. Please try again.");
         return;
       }
 
       setStatus("success");
       setTurnstileToken(null);
-          if (!turnstileDisabled) {
-            const turnstile = (window as typeof window & { turnstile?: any }).turnstile;
-            if (turnstile && widgetIdRef.current) {
-              turnstile.reset(widgetIdRef.current);
-            }
-          }
-          event.currentTarget.reset();
+
+      if (!turnstileDisabled) {
+        const turnstile = (window as typeof window & { turnstile?: any }).turnstile;
+        if (turnstile && widgetIdRef.current) {
+          turnstile.reset(widgetIdRef.current);
+        }
+      }
+
+      event.currentTarget.reset();
     } catch (fetchError) {
       setStatus("error");
       setError("Unable to submit right now. Please try again in a moment.");
