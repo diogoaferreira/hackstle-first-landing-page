@@ -5,6 +5,7 @@ export const metadata = {
 };
 
 import Hero from "@/components/hero-home";
+import BlogPreview from "@/components/blog-preview";
 import BusinessCategories from "@/components/business-categories";
 import FeaturesPlanet from "@/components/features-planet";
 import Cta from "@/components/cta";
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <BlogPreview />
       <BusinessCategories />
       <FeaturesPlanet />
       <Differentiators />
