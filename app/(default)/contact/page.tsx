@@ -6,10 +6,13 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="relative overflow-hidden pb-20 pt-28 sm:pb-28 sm:pt-32">
+    <section
+      className="relative overflow-hidden pb-20 pt-28 sm:pb-28 sm:pt-32"
+      data-aos="fade-up"
+    >
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.12),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(99,102,241,0.12),transparent_25%),radial-gradient(circle_at_50%_70%,rgba(16,185,129,0.12),transparent_35%)]" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl text-center" data-aos="fade-up">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">Contact</p>
           <h1 className="mt-3 text-3xl font-semibold text-gray-900 sm:text-4xl lg:text-5xl">Talk with Hackstle</h1>
           <p className="mt-4 text-lg text-gray-600">
@@ -18,8 +21,12 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-2xl border border-gray-200/70 bg-white p-8 shadow-xl shadow-black/5 sm:p-10">
+        <div className="mt-12 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]" data-aos="fade-up" data-aos-delay="150">
+          <div
+            className="rounded-2xl border border-gray-200/70 bg-white p-8 shadow-xl shadow-black/5 sm:p-10"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <h2 className="text-xl font-semibold text-gray-900">Send us a note</h2>
             <p className="mt-2 text-sm text-gray-600">
               We respond quickly to urgent leak notifications, credential exposures, and emerging CVEs tied to your assets.
@@ -115,7 +122,11 @@ export default function ContactPage() {
             </form>
           </div>
 
-          <div className="flex flex-col justify-between gap-6 rounded-2xl border border-gray-200/70 bg-gray-900 px-8 py-10 text-gray-100 shadow-xl shadow-black/20 sm:px-10">
+          <div
+            className="flex flex-col justify-between gap-6 rounded-2xl border border-gray-200/70 bg-gray-900 px-8 py-10 text-gray-100 shadow-xl shadow-black/20 sm:px-10"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <div className="grid gap-5">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-400">Fast response</p>

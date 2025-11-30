@@ -11,10 +11,13 @@ export const metadata = {
 
 export default function BlogPage() {
   return (
-    <section className="relative pb-16 pt-32 md:pb-24 md:pt-40">
+    <section
+      className="relative pb-16 pt-32 md:pb-24 md:pt-40"
+      data-aos="fade-up"
+    >
       <div className="absolute inset-x-0 top-0 -z-10 h-64 bg-linear-to-b from-[var(--color-brand-50)]/70 to-transparent" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl text-center" data-aos="fade-up">
           <p className="mb-3 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-[var(--color-brand-700)] shadow-sm ring-1 ring-[var(--color-brand-100)]">
             <ArrowUpRight className="h-4 w-4" />
             Blog
@@ -28,11 +31,17 @@ export default function BlogPage() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {blogPosts.map((post) => (
+        <div
+          className="mt-12 grid gap-6 md:grid-cols-2"
+          data-aos="fade-up"
+          data-aos-delay="150"
+        >
+          {blogPosts.map((post, index) => (
             <article
               key={post.slug}
               className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              data-aos="fade-up"
+              data-aos-delay={200 + index * 75}
             >
               <div className="flex items-center gap-3 text-sm text-gray-600">
                 <span className="inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-50)] px-3 py-1 font-medium text-[var(--color-brand-700)]">
