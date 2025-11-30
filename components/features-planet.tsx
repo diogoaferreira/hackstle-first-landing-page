@@ -75,12 +75,18 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <svg
-                  className="fill-[var(--color-brand-500)]"
+                  className="h-4 w-4 text-[var(--color-brand-500)]"
                   xmlns="http://www.w3.org/2000/svg"
-                  width={16}
-                  height={16}
+                  fill="none"
+                  viewBox="0 0 20 20"
+                  stroke="currentColor"
+                  strokeWidth={1.75}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <path d="M2 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4Zm2-4a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4Zm1 10a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H5Z" />
+                  <path d="M3 10c2.5-3.333 5-5 7-5s4.5 1.667 7 5c-2.5 3.333-5 5-7 5s-4.5-1.667-7-5Z" />
+                  <circle cx="10" cy="10" r="2.25" />
+                  <path d="M13.5 6.5 15 5m-10 0 1.5 1.5M10 4.5V3" />
                 </svg>
                 <span>Darkweb Threat Monitoring</span>
               </h3>
@@ -93,12 +99,20 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <svg
-                  className="fill-[var(--color-brand-500)]"
+                  className="h-4 w-4 text-[var(--color-brand-500)]"
                   xmlns="http://www.w3.org/2000/svg"
-                  width={16}
-                  height={16}
+                  fill="none"
+                  viewBox="0 0 20 20"
+                  stroke="currentColor"
+                  strokeWidth={1.75}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <path d="M14.29 2.614a1 1 0 0 0-1.58-1.228L6.407 9.492l-3.199-3.2a1 1 0 1 0-1.414 1.415l4 4a1 1 0 0 0 1.496-.093l7-9ZM1 14a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H1Z" />
+                  <rect x="4.5" y="4" width="11" height="12" rx="2" />
+                  <path d="M4.5 8h11" />
+                  <path d="M8 4V3a2 2 0 0 1 2-2v0a2 2 0 0 1 2 2v1" />
+                  <circle cx="10" cy="11.5" r="2" />
+                  <path d="M10 12.5v1.5" />
                 </svg>
                 <span>Leaked Credential Triage</span>
               </h3>
@@ -111,16 +125,20 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <svg
-                  className="fill-[var(--color-brand-500)]"
+                  className="h-4 w-4 text-[var(--color-brand-500)]"
                   xmlns="http://www.w3.org/2000/svg"
-                  width={16}
-                  height={16}
+                  fill="none"
+                  viewBox="0 0 20 20"
+                  stroke="currentColor"
+                  strokeWidth={1.75}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <path
-                    d="M2.248 6.285a1 1 0 0 1-1.916-.57A8.014 8.014 0 0 1 5.715.332a1 1 0 0 1 .57 1.916 6.014 6.014 0 0 0-4.037 4.037Z"
-                    opacity=".3"
-                  />
-                  <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm1.715-6.752a1 1 0 0 1 .57-1.916 8.014 8.014 0 0 1 5.383 5.383 1 1 0 1 1-1.916.57 6.014 6.014 0 0 0-4.037-4.037Zm4.037 7.467a1 1 0 1 1 1.916.57 8.014 8.014 0 0 1-5.383 5.383 1 1 0 1 1-.57-1.916 6.014 6.014 0 0 0 4.037-4.037Zm-7.467 4.037a1 1 0 1 1-.57 1.916 8.014 8.014 0 0 1-5.383-5.383 1 1 0 1 1 1.916-.57 6.014 6.014 0 0 0 4.037 4.037Z" />
+                  <circle cx="6" cy="6" r="2.25" />
+                  <circle cx="14" cy="6" r="2.25" />
+                  <circle cx="10" cy="14" r="2.25" />
+                  <path d="m7.5 7.5 2 2m3-2-2.5 2.5" />
+                  <path d="M6 8.5v4M14 8.5v4" />
                 </svg>
                 <span>CVE &amp; Exploit Correlation</span>
               </h3>
@@ -133,12 +151,17 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <svg
-                  className="fill-[var(--color-brand-500)]"
+                  className="h-4 w-4 text-[var(--color-brand-500)]"
                   xmlns="http://www.w3.org/2000/svg"
-                  width={16}
-                  height={16}
+                  fill="none"
+                  viewBox="0 0 20 20"
+                  stroke="currentColor"
+                  strokeWidth={1.75}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <path d="M8 0a1 1 0 0 1 1 1v14a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1Zm6 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h1a1 1 0 1 1 0 2h-1a3 3 0 0 1-3-3V4a3 3 0 0 1 3-3h1a1 1 0 1 1 0 2h-1ZM1 1a1 1 0 0 0 0 2h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 1 0 0 2h1a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3H1Z" />
+                  <path d="M10 2.5 4 6.25v3.5C4 14 6.5 16.75 10 17.5c3.5-.75 6-3.5 6-7.75v-3.5L10 2.5Z" />
+                  <path d="M7.25 10.25 9 12l3.5-3.5" />
                 </svg>
                 <span>Attack Surface Management</span>
               </h3>
@@ -151,12 +174,18 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <svg
-                  className="fill-[var(--color-brand-500)]"
+                  className="h-4 w-4 text-[var(--color-brand-500)]"
                   xmlns="http://www.w3.org/2000/svg"
-                  width={16}
-                  height={16}
+                  fill="none"
+                  viewBox="0 0 20 20"
+                  stroke="currentColor"
+                  strokeWidth={1.75}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <path d="M10.284.33a1 1 0 1 0-.574 1.917 6.049 6.049 0 0 1 2.417 1.395A1 1 0 0 0 13.5 2.188 8.034 8.034 0 0 0 10.284.33ZM6.288 2.248A1 1 0 0 0 5.718.33 8.036 8.036 0 0 0 2.5 2.187a1 1 0 0 0 1.372 1.455 6.036 6.036 0 0 1 2.415-1.395ZM1.42 5.401a1 1 0 0 1 .742 1.204 6.025 6.025 0 0 0 0 2.79 1 1 0 0 1-1.946.462 8.026 8.026 0 0 1 0-3.714A1 1 0 0 1 1.421 5.4Zm2.452 6.957A1 1 0 0 0 2.5 13.812a8.036 8.036 0 0 0 3.216 1.857 1 1 0 0 0 .574-1.916 6.044 6.044 0 0 1-2.417-1.395Zm9.668.04a1 1 0 0 1-.041 1.414 8.033 8.033 0 0 1-3.217 1.857 1 1 0 1 1-.571-1.917 6.035 6.035 0 0 0 2.415-1.395 1 1 0 0 1 1.414.042Zm2.242-6.255a1 1 0 1 0-1.946.462 6.03 6.03 0 0 1 0 2.79 1 1 0 1 0 1.946.462 8.022 8.022 0 0 0 0-3.714Z" />
+                  <path d="M5.5 6.5a4.5 4.5 0 1 1 9 0v2.25" />
+                  <rect x="3.5" y="8.75" width="13" height="7.25" rx="2.25" />
+                  <path d="M7.25 12.25a2.75 2.75 0 0 0 5.5 0" />
                 </svg>
                 <span>Third-Party Incident Watch</span>
               </h3>
@@ -168,12 +197,19 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <svg
-                  className="fill-[var(--color-brand-500)]"
+                  className="h-4 w-4 text-[var(--color-brand-500)]"
                   xmlns="http://www.w3.org/2000/svg"
-                  width={16}
-                  height={16}
+                  fill="none"
+                  viewBox="0 0 20 20"
+                  stroke="currentColor"
+                  strokeWidth={1.75}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <path d="M9 1a1 1 0 1 0-2 0v6a1 1 0 0 0 2 0V1ZM4.572 3.08a1 1 0 0 0-1.144-1.64A7.987 7.987 0 0 0 0 8a8 8 0 0 0 16 0c0-2.72-1.36-5.117-3.428-6.56a1 1 0 1 0-1.144 1.64A5.987 5.987 0 0 1 14 8 6 6 0 1 1 2 8a5.987 5.987 0 0 1 2.572-4.92Z" />
+                  <path d="M4.5 5.5h4.75L12 3.25l2.75 2.25H17" />
+                  <path d="M4.5 10h5" />
+                  <path d="M7 10v-1.5" />
+                  <path d="M4.5 14.5h4.75L12 12.25l2.75 2.25H17" />
                 </svg>
                 <span>Actionable Workflows</span>
               </h3>
