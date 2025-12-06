@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BadgeCheck } from "lucide-react";
 
 const certifications = [
@@ -6,30 +7,35 @@ const certifications = [
     name: "Offensive Security Certified Professional",
     gradient: "from-[#8C52FF] to-[#5B21B6]",
     tone: "text-white",
+    logo: "/images/oscp.png",
   },
   {
-    code: "OSED",
-    name: "Offensive Security Exploit Developer",
+    code: "OSEP",
+    name: "Offensive Security Experienced Penetration Tester",
     gradient: "from-[#111827] to-[#1F2937]",
     tone: "text-indigo-50",
+    logo: "/images/osep.svg",
   },
   {
     code: "CTIA",
     name: "Certified Threat Intelligence Analyst",
     gradient: "from-[#0EA5E9] to-[#2563EB]",
     tone: "text-white",
+    logo: "/images/ctia.png",
   },
   {
     code: "OSTH",
-    name: "Offensive Security Web Expert (OSTH)",
+    name: "Offensive Security Threat Hunter",
     gradient: "from-[#F59E0B] to-[#EA580C]",
     tone: "text-white",
+    logo: "/images/osth.png",
   },
   {
     code: "RTO",
     name: "Red Team Operator",
     gradient: "from-[#10B981] to-[#059669]",
     tone: "text-white",
+    logo: "/images/rto.png",
   },
 ];
 
@@ -48,14 +54,14 @@ export default function Certifications() {
                 Elite practitioners behind every alert
               </h2>
               <p className="text-lg text-gray-600">
-                Hackstle analysts pair darkweb tradecraft with enterprise reporting discipline. From exploit development to threat intelligence frameworks, the team is certified to tackle complex incidents with confidence.
+                Hackstle analysts pair darkweb tradecraft with enterprise reporting discipline. From Red Team operators to threat intelligence frameworks, the team is certified to tackle complex incidents with confidence.
               </p>
             </div>
 
             <div className="rounded-2xl border border-gray-200 bg-white/90 p-6 shadow-sm shadow-black/[0.03] backdrop-blur">
               <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-gray-800" data-aos="fade-up" data-aos-delay="50">
                 <BadgeCheck className="h-4 w-4 text-[var(--color-brand-500)]" strokeWidth={1.75} />
-                Credentials we bring into every investigation
+                Certificates we bring into every investigation
               </div>
               <div className="grid gap-3 sm:grid-cols-2" data-aos="fade-up" data-aos-delay="100">
                 {certifications.map((cert, index) => (
@@ -66,11 +72,19 @@ export default function Certifications() {
                     data-aos-delay={140 + index * 50}
                   >
                     <div
-                      className={`relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br ${cert.gradient} ${cert.tone} text-sm font-bold tracking-wide shadow-lg shadow-black/10`}
+                      className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl bg-gray-50 shadow-lg shadow-black/10"
                       aria-hidden="true"
                     >
-                      <span>{cert.code}</span>
-                      <span className="absolute inset-0 rounded-xl ring-1 ring-inset ring-white/30" />
+                      <Image
+                        src={cert.logo}
+                        alt={`${cert.code} certification logo`}
+                        width={56}
+                        height={56}
+                        className="h-12 w-12 object-contain"
+                        priority={index === 0}
+                        loading={index === 0 ? "eager" : "lazy"}
+                      />
+                      <span className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/60" />
                     </div>
                     <div>
                       <p className="text-base font-semibold text-gray-900">{cert.code}</p>

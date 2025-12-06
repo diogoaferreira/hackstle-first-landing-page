@@ -14,7 +14,7 @@ export default function HeroHome() {
               data-aos="zoom-y-out"
               data-aos-delay={150}
             >
-              Hackstle: Darkweb threat <br className="max-lg:hidden" />
+              Darkweb threat <br className="max-lg:hidden" />
               intelligence that acts fast
             </h1>
             <div className="mx-auto max-w-3xl">
@@ -23,10 +23,7 @@ export default function HeroHome() {
                 data-aos="zoom-y-out"
                 data-aos-delay={300}
               >
-                We hunt for leaked credentials, ransomware chatter, CVEs, and
-                third-party incidents across the darkweb, then correlate what
-                matters to your exposed assets so you can contain threats
-                before they become breaches.
+                We hunt the dark web for leaks, exploits, and criminal chatter, then cut the noise and tell you exactly what to do about it. No experts needed from your side. No guessing. No bullsh*t.
               </p>
               <div className="relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1]">
                 <div
@@ -44,12 +41,6 @@ export default function HeroHome() {
                         -&gt;
                       </span>
                     </span>
-                  </a>
-                  <a
-                    className="btn w-full bg-white text-gray-800 shadow-sm hover:bg-gray-50 sm:ml-4 sm:w-auto"
-                    href="#0"
-                  >
-                    See the platform
                   </a>
                 </div>
               </div>

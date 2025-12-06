@@ -16,7 +16,7 @@ export default function Header() {
             <li>
               <Link
                 href="/blog"
-                className="font-semibold text-gray-800 transition hover:text-[var(--color-brand-700)]"
+                className="text-gray-800 transition hover:text-[var(--color-brand-700)]"
               >
                 Blog
               </Link>
@@ -26,7 +26,7 @@ export default function Header() {
                 href="/contact"
                 className="btn-sm bg-[var(--color-brand-500)] text-white shadow-sm transition hover:bg-[var(--color-brand-600)]"
               >
-                Contact Us
+                Contact us
               </Link>
             </li>
           </ul>
