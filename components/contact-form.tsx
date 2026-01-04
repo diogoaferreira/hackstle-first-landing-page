@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type SubmissionState = "idle" | "submitting" | "success" | "error";
 
@@ -12,6 +13,7 @@ const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 const turnstileDisabled = process.env.NEXT_PUBLIC_TURNSTILE_DISABLED === "true";
 
 export function ContactForm() {
+  const { t } = useLanguage();
   const [status, setStatus] = useState<SubmissionState>("idle");
   const [error, setError] = useState<string | null>(null);
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
@@ -144,16 +146,16 @@ export function ContactForm() {
       data-aos="fade-up"
       data-aos-delay="200"
     >
-      <h2 className="text-xl font-semibold text-gray-900">Send us a note</h2>
+      <h2 className="text-xl font-semibold text-gray-900">{t.contact.form.title}</h2>
       <p className="mt-2 text-sm text-gray-600">
-        We respond quickly to urgent leak notifications, credential exposures, and emerging CVEs tied to your assets.
+        {t.contact.form.subtitle}
       </p>
 
       <form className="mt-8 grid gap-6" onSubmit={handleSubmit}>
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="grid gap-2">
             <label className="text-sm font-medium text-gray-800" htmlFor="name">
-              Name
+              {t.contact.form.name}
             </label>
             <input
               id="name"
@@ -161,12 +163,12 @@ export function ContactForm() {
               type="text"
               required
               className="rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 shadow-sm shadow-black/5 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
-              placeholder="Alex Ramirez"
+              placeholder={t.contact.form.namePlaceholder}
             />
           </div>
           <div className="grid gap-2">
             <label className="text-sm font-medium text-gray-800" htmlFor="email">
-              Work email
+              {t.contact.form.workEmail}
             </label>
             <input
               id="email"
@@ -174,7 +176,7 @@ export function ContactForm() {
               type="email"
               required
               className="rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 shadow-sm shadow-black/5 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
-              placeholder="alex@company.com"
+              placeholder={t.contact.form.emailPlaceholder}
             />
           </div>
         </div>
@@ -182,33 +184,33 @@ export function ContactForm() {
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="grid gap-2">
             <label className="text-sm font-medium text-gray-800" htmlFor="company">
-              Company
+              {t.contact.form.company}
             </label>
             <input
               id="company"
               name="company"
               type="text"
               className="rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 shadow-sm shadow-black/5 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
-              placeholder="Acme Security"
+              placeholder={t.contact.form.companyPlaceholder}
             />
           </div>
           <div className="grid gap-2">
             <label className="text-sm font-medium text-gray-800" htmlFor="role">
-              Role
+              {t.contact.form.role}
             </label>
             <input
               id="role"
               name="role"
               type="text"
               className="rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 shadow-sm shadow-black/5 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
-              placeholder="SOC Lead"
+              placeholder={t.contact.form.rolePlaceholder}
             />
           </div>
         </div>
 
         <div className="grid gap-2">
           <label className="text-sm font-medium text-gray-800" htmlFor="message">
-            How can we help?
+            {t.contact.form.howCanWeHelp}
           </label>
           <textarea
             id="message"
@@ -216,7 +218,7 @@ export function ContactForm() {
             required
             rows={5}
             className="rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 shadow-sm shadow-black/5 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
-            placeholder="Share the incident, assets, or CVEs you want us to monitor."
+            placeholder={t.contact.form.messagePlaceholder}
           />
         </div>
 
@@ -231,7 +233,7 @@ export function ContactForm() {
           {error ? (
             <p className="text-sm text-red-600">{error}</p>
           ) : status === "success" ? (
-            <p className="text-sm text-emerald-600">Thank you—our team will reach out shortly.</p>
+            <p className="text-sm text-emerald-600">{t.contact.form.successMessage}</p>
           ) : null}
         </div>
 
@@ -242,14 +244,14 @@ export function ContactForm() {
               name="briefing"
               className="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-700"
             />
-            Request a 30-minute threat briefing
+            {t.contact.form.briefingRequest}
           </label>
           <button
             type="submit"
             className="inline-flex items-center justify-center rounded-xl bg-gray-900 px-6 py-3 text-sm font-semibold text-gray-100 shadow-lg shadow-gray-900/20 transition hover:-translate-y-[1px] hover:shadow-xl hover:shadow-gray-900/25 disabled:cursor-not-allowed disabled:opacity-70"
             disabled={status === "submitting"}
           >
-            {status === "submitting" ? "Sending..." : "Submit request"}
+            {status === "submitting" ? t.contact.form.submitting : t.contact.form.submitButton}
           </button>
         </div>
       </form>

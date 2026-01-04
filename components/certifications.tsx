@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { BadgeCheck } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const certifications = [
   {
@@ -40,6 +43,8 @@ const certifications = [
 ];
 
 export default function Certifications() {
+  const { t } = useLanguage();
+
   return (
     <section>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -48,20 +53,20 @@ export default function Certifications() {
             <div className="space-y-4" data-aos="fade-up">
               <div className="inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-500)]/10 px-3 py-1 text-sm font-medium text-[var(--color-brand-600)]">
                 <BadgeCheck className="h-4 w-4" strokeWidth={1.75} />
-                Deeply certified team
+                {t.certifications.badge}
               </div>
               <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">
-                Elite practitioners behind every alert
+                {t.certifications.title}
               </h2>
               <p className="text-lg text-gray-600">
-                Hackstle analysts pair darkweb tradecraft with enterprise reporting discipline. From Red Team operators to threat intelligence frameworks, the team is certified to tackle complex incidents with confidence.
+                {t.certifications.subtitle}
               </p>
             </div>
 
             <div className="rounded-2xl border border-gray-200 bg-white/90 p-6 shadow-sm shadow-black/[0.03] backdrop-blur">
               <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-gray-800" data-aos="fade-up" data-aos-delay="50">
                 <BadgeCheck className="h-4 w-4 text-[var(--color-brand-500)]" strokeWidth={1.75} />
-                Certificates we bring into every investigation
+                {t.certifications.certificatesTitle}
               </div>
               <div className="grid gap-3 sm:grid-cols-2" data-aos="fade-up" data-aos-delay="100">
                 {certifications.map((cert, index) => (

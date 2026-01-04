@@ -1,46 +1,47 @@
-import { ClipboardList, Filter, Gauge, Target } from "lucide-react";
+"use client";
 
-const differentiators = [
-  {
-    title: "Tailored intelligence, not templates",
-    description:
-      "Engagements are calibrated to your brands, attack surface, and industry context so analysts see only what matters to your organization.",
-    Icon: Target,
-  },
-  {
-    title: "Signal over noise",
-    description:
-      "Noise-cutting triage and analyst validation eliminate false positives, keeping darkweb mentions, leaked creds, and CVEs trustworthy and actionable.",
-    Icon: Filter,
-  },
-  {
-    title: "Clarity without dashboard sprawl",
-    description:
-      "We ship insights in streamlined views instead of complex dashboards, so your SOC and executives get to outcomes faster.",
-    Icon: Gauge,
-  },
-  {
-    title: "Reporting that lands",
-    description:
-      "Executive-ready reports summarize impact, urgency, and recommended actions so you can brief stakeholders with confidence.",
-    Icon: ClipboardList,
-  },
-];
+import { ClipboardList, Filter, Gauge, Target } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Differentiators() {
+  const { t } = useLanguage();
+
+  const differentiators = [
+    {
+      title: t.differentiators.items.tailoredIntelligence.title,
+      description: t.differentiators.items.tailoredIntelligence.description,
+      Icon: Target,
+    },
+    {
+      title: t.differentiators.items.signalOverNoise.title,
+      description: t.differentiators.items.signalOverNoise.description,
+      Icon: Filter,
+    },
+    {
+      title: t.differentiators.items.clarityWithoutSprawl.title,
+      description: t.differentiators.items.clarityWithoutSprawl.description,
+      Icon: Gauge,
+    },
+    {
+      title: t.differentiators.items.reportingThatLands.title,
+      description: t.differentiators.items.reportingThatLands.description,
+      Icon: ClipboardList,
+    },
+  ];
+
   return (
     <section>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-12 md:py-20">
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-flex rounded-full bg-[var(--color-brand-500)]/10 px-3 py-1 text-sm font-medium text-[var(--color-brand-600)]">
-              Why Hackstle is different
+              {t.differentiators.badge}
             </div>
             <h2 className="mt-4 text-3xl font-bold text-gray-900 md:text-4xl">
-              Built for teams that need precision, not another portal
+              {t.differentiators.title}
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Hackstle trims noise, tailors coverage to your environment, and turns darkweb intelligence into clear, decisive actions.
+              {t.differentiators.subtitle}
             </p>
           </div>
 

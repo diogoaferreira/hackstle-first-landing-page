@@ -1,6 +1,11 @@
+"use client";
+
 import PageIllustration from "@/components/page-illustration";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function HeroHome() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative">
       <PageIllustration />
@@ -14,8 +19,8 @@ export default function HeroHome() {
               data-aos="zoom-y-out"
               data-aos-delay={150}
             >
-              Darkweb threat <br className="max-lg:hidden" />
-              intelligence that acts fast
+              {t.hero.title.split(' ').slice(0, 2).join(' ')} <br className="max-lg:hidden" />
+              {t.hero.title.split(' ').slice(2).join(' ')}
             </h1>
             <div className="mx-auto max-w-3xl">
               <p
@@ -23,7 +28,7 @@ export default function HeroHome() {
                 data-aos="zoom-y-out"
                 data-aos-delay={300}
               >
-                We hunt the dark web for leaks, exploits, and criminal chatter, then cut the noise and tell you exactly what to do about it. No experts needed from your side. No guessing. No bullsh*t.
+                {t.hero.subtitle}
               </p>
               <div className="relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1]">
                 <div
@@ -36,7 +41,7 @@ export default function HeroHome() {
                     href="/contact"
                   >
                     <span className="relative inline-flex items-center">
-                      Request intelligence briefing{" "}
+                      {t.hero.cta}{" "}
                       <span className="ml-1 tracking-normal text-[var(--color-brand-200)] transition-transform group-hover:translate-x-0.5">
                         -&gt;
                       </span>
@@ -55,7 +60,7 @@ export default function HeroHome() {
             <div className="relative aspect-video rounded-2xl bg-gray-900 px-5 py-3 shadow-xl before:pointer-events-none before:absolute before:-inset-5 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1] after:absolute after:-inset-5 after:-z-10 after:border-x after:[border-image:linear-gradient(to_bottom,transparent,--theme(--color-slate-300/.8),transparent)1]">
               <div className="relative mb-8 flex items-center justify-between before:block before:h-[9px] before:w-[41px] before:bg-[length:16px_9px] before:[background-image:radial-gradient(circle_at_4.5px_4.5px,var(--color-gray-600)_4.5px,transparent_0)] after:w-[41px]">
                 <span className="text-[13px] font-medium text-white">
-                  hackstle.cmd
+                  {t.hero.terminalTitle}
                 </span>
               </div>
               <div className="font-mono text-gray-500 [&_span]:opacity-0">

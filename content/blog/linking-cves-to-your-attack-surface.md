@@ -1,7 +1,7 @@
 ---
 title: Linking CVEs to your attack surface
 summary: Why vulnerability chatter matters more when paired with real asset exposure across your footprint.
-date: 2024-11-12
+date: 2026-11-12T02:00:00Z
 readingTime: 6 min read
 category: CVE Correlation
 tags:

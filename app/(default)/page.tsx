@@ -11,10 +11,12 @@ import FeaturesPlanet from "@/components/features-planet";
 import Cta from "@/components/cta";
 import Differentiators from "@/components/differentiators";
 import Certifications from "@/components/certifications";
+import HashScrollHandler from "@/components/hash-scroll-handler";
 
 export default function Home() {
   return (
     <>
+      <HashScrollHandler />
       <Hero />
       <BlogPreview />
       <BusinessCategories />

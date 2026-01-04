@@ -22,10 +22,12 @@ const BLOG_DIRECTORY = path.join(process.cwd(), "content", "blog");
 const parseFrontmatter = (
   raw: string,
 ): { data: Record<string, string | string[]>; content: string } => {
-  const match = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+  // Handle different line endings and be more flexible with the regex
+  const normalizedRaw = raw.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  const match = normalizedRaw.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
 
   if (!match) {
-    return { data: {}, content: raw.trim() };
+    return { data: {}, content: normalizedRaw.trim() };
   }
 
   const [, frontmatter, content] = match;

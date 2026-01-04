@@ -1,12 +1,11 @@
-import { ContactForm } from "@/components/contact-form";
+"use client";
 
-export const metadata = {
-  title: "Contact Hackstle | Threat Intelligence Briefing",
-  description:
-    "Connect with Hackstle for a threat intelligence briefing, platform tour, or darkweb incident triage support.",
-};
+import { ContactForm } from "@/components/contact-form";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ContactPage() {
+  const { t } = useLanguage();
+
   return (
     <section
       className="relative overflow-hidden pb-20 pt-28 sm:pb-28 sm:pt-32"
@@ -15,10 +14,10 @@ export default function ContactPage() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.12),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(99,102,241,0.12),transparent_25%),radial-gradient(circle_at_50%_70%,rgba(16,185,129,0.12),transparent_35%)]" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-3xl text-center" data-aos="fade-up">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">Contact</p>
-          <h1 className="mt-3 text-3xl font-semibold text-gray-900 sm:text-4xl lg:text-5xl">Talk with Hackstle</h1>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">{t.common.contact}</p>
+          <h1 className="mt-3 text-3xl font-semibold text-gray-900 sm:text-4xl lg:text-5xl">{t.contact.pageTitle}</h1>
           <p className="mt-4 text-lg text-gray-600">
-            Request a live briefing, schedule a platform walk-through, or drop details about a darkweb incident you need triaged fast.
+            {t.contact.pageSubtitle}
           </p>
         </div>
 
@@ -32,39 +31,47 @@ export default function ContactPage() {
           >
             <div className="grid gap-5">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-400">Fast response</p>
-                <h2 className="mt-2 text-2xl font-semibold">What to expect</h2>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-400">{t.contact.expectationsSubtitle}</p>
+                <h2 className="mt-2 text-2xl font-semibold">{t.contact.expectationsTitle}</h2>
                 <p className="mt-3 text-gray-200">
-                  A Hackstle analyst will reach out with next steps—log sources we can monitor, leaked data samples for validation,
-                  and a timeline for containment.
+                  {t.contact.expectationsDescription}
                 </p>
               </div>
               <ul className="grid gap-4 text-gray-100">
                 <li className="flex gap-3">
                   <span className="mt-[6px] h-2.5 w-2.5 rounded-full bg-emerald-400" />
                   <div>
-                    <p className="text-sm font-semibold">Darkweb leak triage</p>
-                    <p className="text-sm text-gray-200">Rapid validation of paste sites, forums, and breach channels.</p>
+                    <p className="text-sm font-semibold">{t.contact.services.darkwebTriage.title}</p>
+                    <p className="text-sm text-gray-200">{t.contact.services.darkwebTriage.description}</p>
                   </div>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-[6px] h-2.5 w-2.5 rounded-full bg-sky-400" />
                   <div>
-                    <p className="text-sm font-semibold">Attack surface mapping</p>
-                    <p className="text-sm text-gray-200">Exposed assets correlated with active exploits and CVEs.</p>
+                    <p className="text-sm font-semibold">{t.contact.services.attackSurfaceMapping.title}</p>
+                    <p className="text-sm text-gray-200">{t.contact.services.attackSurfaceMapping.description}</p>
                   </div>
                 </li>
                 <li className="flex gap-3">
                   <span className="mt-[6px] h-2.5 w-2.5 rounded-full bg-[var(--color-brand-400)]" />
                   <div>
-                    <p className="text-sm font-semibold">Third-party incident watch</p>
-                    <p className="text-sm text-gray-200">Visibility into suppliers and partners linked to your org.</p>
+                    <p className="text-sm font-semibold">{t.contact.services.thirdPartyWatch.title}</p>
+                    <p className="text-sm text-gray-200">{t.contact.services.thirdPartyWatch.description}</p>
                   </div>
                 </li>
               </ul>
             </div>
             <div className="rounded-xl bg-gray-800/60 px-5 py-4 text-sm text-gray-200 ring-1 ring-white/5">
-              Prefer to talk now? Email <a className="font-semibold text-white underline decoration-white/60 underline-offset-4" href="mailto:hello@hackstle.io">hello@hackstle.io</a> for urgent issues.
+              {t.contact.urgentContact.split('hello@hackstle.io').map((part, index, array) => (
+                <span key={index}>
+                  {part}
+                  {index < array.length - 1 && (
+                    <a className="font-semibold text-white underline decoration-white/60 underline-offset-4" href="mailto:hello@hackstle.io">
+                      hello@hackstle.io
+                    </a>
+                  )}
+                </span>
+              ))}
             </div>
           </div>
         </div>
