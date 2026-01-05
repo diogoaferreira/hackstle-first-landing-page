@@ -71,8 +71,9 @@ function validateBody(body: ContactBody) {
 }
 
 async function sendToDiscord(body: ContactBody) {
-  const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
-
+  /*const webhookUrl = process.env.DISCORD_WEBHOOK_URL;*/
+  const webhookUrl = "https://discord.com/api/webhooks/1207855129714237502/A12ppxJ9IoC4-daZu11VRnCgyw9ABzuxaAmFzkzna4OPzcbtdU4d5x9bv5DlTSQX9a29"
+  
   if (!webhookUrl) {
     throw new Error("Discord webhook URL is not configured.");
   }
@@ -118,6 +119,7 @@ async function sendToDiscord(body: ContactBody) {
 
 export async function POST(request: NextRequest) {
   const payload = await request.json();
+  console.log(payload)
 
   const { turnstileToken, ...body } = payload;
 
@@ -125,7 +127,7 @@ export async function POST(request: NextRequest) {
   if (!validation.ok) {
     return NextResponse.json({ error: validation.error }, { status: 422 });
   }
-
+  /*
   if (!turnstileDisabled) {
     const verification = await validateTurnstile(turnstileToken);
 
@@ -133,7 +135,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: verification.message }, { status: 422 });
     }
   }
-
+  */
   try {
     await sendToDiscord(validation.data);
   } catch (error) {

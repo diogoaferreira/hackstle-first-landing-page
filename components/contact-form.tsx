@@ -10,7 +10,8 @@ const TURNSTILE_SCRIPT_SRC =
   "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
 
 const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
-const turnstileDisabled = process.env.NEXT_PUBLIC_TURNSTILE_DISABLED === "true";
+/*const turnstileDisabled = process.env.NEXT_PUBLIC_TURNSTILE_DISABLED === "true";*/
+const turnstileDisabled = true;
 
 export function ContactForm() {
   const { t } = useLanguage();
