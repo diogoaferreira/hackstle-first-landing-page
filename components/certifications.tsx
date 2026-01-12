@@ -46,7 +46,7 @@ export default function Certifications() {
   const { t } = useLanguage();
 
   return (
-    <section>
+    <section id="about">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-12 md:py-20">
           <div className="grid items-start gap-10 md:grid-cols-[1.1fr_1fr]">

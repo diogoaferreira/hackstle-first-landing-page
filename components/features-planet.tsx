@@ -194,38 +194,14 @@ export default function FeaturesPlanet() {
           <div className="grid overflow-hidden sm:grid-cols-2 lg:grid-cols-3 *:relative *:p-6 *:before:absolute *:before:bg-gray-800 *:before:[block-size:100vh] *:before:[inline-size:1px] *:before:[inset-block-start:0] *:before:[inset-inline-start:-1px] *:after:absolute *:after:bg-gray-800 *:after:[block-size:1px] *:after:[inline-size:100vw] *:after:[inset-block-start:-1px] *:after:[inset-inline-start:0] md:*:p-10">
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
-                <Eye
+                <Network
                   className="h-4 w-4 text-[var(--color-brand-500)]"
                   strokeWidth={1.75}
                 />
-                <span>{t.features.services.darkwebThreatMonitoring.title}</span>
+                <span>{t.features.services.s1.title}</span>
               </h3>
               <p className="text-[15px] text-gray-400">
-                {t.features.services.darkwebThreatMonitoring.description}
-              </p>
-            </article>
-            <article>
-              <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
-                <KeyRound
-                  className="h-4 w-4 text-[var(--color-brand-500)]"
-                  strokeWidth={1.75}
-                />
-                <span>{t.features.services.leakedCredentialTriage.title}</span>
-              </h3>
-              <p className="text-[15px] text-gray-400">
-                {t.features.services.leakedCredentialTriage.description}
-              </p>
-            </article>
-            <article>
-              <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
-                <Bug
-                  className="h-4 w-4 text-[var(--color-brand-500)]"
-                  strokeWidth={1.75}
-                />
-                <span>{t.features.services.cveExploitCorrelation.title}</span>
-              </h3>
-              <p className="text-[15px] text-gray-400">
-                {t.features.services.cveExploitCorrelation.description}
+                {t.features.services.s1.description}
               </p>
             </article>
             <article>
@@ -234,58 +210,46 @@ export default function FeaturesPlanet() {
                   className="h-4 w-4 text-[var(--color-brand-500)]"
                   strokeWidth={1.75}
                 />
-                <span>{t.features.services.attackSurfaceManagement.title}</span>
+                <span>{t.features.services.s2.title}</span>
               </h3>
               <p className="text-[15px] text-gray-400">
-                {t.features.services.attackSurfaceManagement.description}
+                {t.features.services.s2.description}
               </p>
             </article>
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
-                <Swords
+                <Eye
                   className="h-4 w-4 text-[var(--color-brand-500)]"
                   strokeWidth={1.75}
                 />
-                <span>{t.features.services.redTeamingOperations.title}</span>
+                <span>{t.features.services.s3.title}</span>
               </h3>
               <p className="text-[15px] text-gray-400">
-                {t.features.services.redTeamingOperations.description}
+                {t.features.services.s3.description}
               </p>
             </article>
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
-                <PenTool
+                <KeyRound
                   className="h-4 w-4 text-[var(--color-brand-500)]"
                   strokeWidth={1.75}
                 />
-                <span>{t.features.services.penetrationTesting.title}</span>
+                <span>{t.features.services.s4.title}</span>
               </h3>
               <p className="text-[15px] text-gray-400">
-                {t.features.services.penetrationTesting.description}
+                {t.features.services.s4.description}
               </p>
             </article>
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
-                <Network
+                <FileWarning
                   className="h-4 w-4 text-[var(--color-brand-500)]"
                   strokeWidth={1.75}
                 />
-                <span>{t.features.services.thirdPartyIncidentWatch.title}</span>
+                <span>{t.features.services.s5.title}</span>
               </h3>
               <p className="text-[15px] text-gray-400">
-                {t.features.services.thirdPartyIncidentWatch.description}
-              </p>
-            </article>
-            <article>
-              <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
-                <Workflow
-                  className="h-4 w-4 text-[var(--color-brand-500)]"
-                  strokeWidth={1.75}
-                />
-                <span>{t.features.services.actionableWorkflows.title}</span>
-              </h3>
-              <p className="text-[15px] text-gray-400">
-                {t.features.services.actionableWorkflows.description}
+                {t.features.services.s5.description}
               </p>
             </article>
             <article>
@@ -294,10 +258,46 @@ export default function FeaturesPlanet() {
                   className="h-4 w-4 text-[var(--color-brand-500)]"
                   strokeWidth={1.75}
                 />
-                <span>{t.features.services.brandProtectionTakedowns.title}</span>
+                <span>{t.features.services.s6.title}</span>
               </h3>
               <p className="text-[15px] text-gray-400">
-                {t.features.services.brandProtectionTakedowns.description}
+                {t.features.services.s6.description}
+              </p>
+            </article>
+            <article>
+              <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
+                <Bug
+                  className="h-4 w-4 text-[var(--color-brand-500)]"
+                  strokeWidth={1.75}
+                />
+                <span>{t.features.services.s7.title}</span>
+              </h3>
+              <p className="text-[15px] text-gray-400">
+                {t.features.services.s7.description}
+              </p>
+            </article>
+            <article>
+              <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
+                <Swords
+                  className="h-4 w-4 text-[var(--color-brand-500)]"
+                  strokeWidth={1.75}
+                />
+                <span>{t.features.services.s8.title}</span>
+              </h3>
+              <p className="text-[15px] text-gray-400">
+                {t.features.services.s8.description}
+              </p>
+            </article>
+            <article>
+              <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
+                <Workflow
+                  className="h-4 w-4 text-[var(--color-brand-500)]"
+                  strokeWidth={1.75}
+                />
+                <span>{t.features.services.s9.title}</span>
+              </h3>
+              <p className="text-[15px] text-gray-400">
+                {t.features.services.s9.description}
               </p>
             </article>
           </div>

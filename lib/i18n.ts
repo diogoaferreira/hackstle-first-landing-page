@@ -5,6 +5,7 @@ export interface Translations {
   header: {
     home: string;
     ourServices: string;
+    whyHackstle: string;
     aboutUs: string;
     blog: string;
     contactUs: string;
@@ -22,39 +23,39 @@ export interface Translations {
   features: {
     title: string;
     services: {
-      darkwebThreatMonitoring: {
+      s1: {
         title: string;
         description: string;
       };
-      leakedCredentialTriage: {
+      s2: {
         title: string;
         description: string;
       };
-      cveExploitCorrelation: {
+      s3: {
         title: string;
         description: string;
       };
-      attackSurfaceManagement: {
+      s4: {
         title: string;
         description: string;
       };
-      redTeamingOperations: {
+      s5: {
         title: string;
         description: string;
       };
-      penetrationTesting: {
+      s6: {
         title: string;
         description: string;
       };
-      thirdPartyIncidentWatch: {
+      s7: {
         title: string;
         description: string;
       };
-      actionableWorkflows: {
+      s8: {
         title: string;
         description: string;
       };
-      brandProtectionTakedowns: {
+      s9: {
         title: string;
         description: string;
       };
@@ -181,6 +182,36 @@ export interface Translations {
     };
   };
 
+  whatWeOffer: {
+    title: string;
+    subtitle: string;
+    services: {
+      cti: {
+        title: string;
+        items: string[];
+      };
+      asm: {
+        title: string;
+        items: string[];
+      };
+      assessments: {
+        title: string;
+        items: string[];
+      };
+      audit: {
+        title: string;
+        items: string[];
+      };
+      redteam: {
+        title: string;
+        items: string[];
+      };
+      ciso: {
+        title: string;
+        items: string[];
+      };
+    };
+  };
   // Certifications
   certifications: {
     badge: string;

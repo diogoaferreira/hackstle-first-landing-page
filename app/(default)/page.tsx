@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Hackstle | Darkweb Threat Intelligence",
+  title: "Hackstle",
   description:
     "Hackstle monitors darkweb chatter, leaked credentials, CVEs, and exposed assets to help teams act on threats fast.",
 };
@@ -8,6 +8,7 @@ import Hero from "@/components/hero-home";
 import BlogPreview from "@/components/blog-preview";
 import BusinessCategories from "@/components/business-categories";
 import FeaturesPlanet from "@/components/features-planet";
+import WhatWeDo from "@/components/what-we-do";
 import Cta from "@/components/cta";
 import Differentiators from "@/components/differentiators";
 import Certifications from "@/components/certifications";
@@ -22,6 +23,7 @@ export default function Home() {
       <BusinessCategories />
       <FeaturesPlanet />
       <Differentiators />
+      <WhatWeDo />
       <Certifications />
       <Cta />
     </>

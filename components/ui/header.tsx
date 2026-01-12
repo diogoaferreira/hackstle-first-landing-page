@@ -41,6 +41,21 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
+  const scrollTo = (sectionName: string) => {
+    const servicesSection = document.getElementById(sectionName);
+    if (servicesSection) {
+      // If we're on the homepage and the services section exists, scroll to it
+      servicesSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      // If we're on a different page, navigate to homepage with hash
+      window.location.href = '/#'+sectionName;
+    }
+    setIsMenuOpen(false); // Close mobile menu after clicking
+  };
+
   const scrollToServices = () => {
     const servicesSection = document.getElementById('services');
     if (servicesSection) {
@@ -83,10 +98,18 @@ export default function Header() {
               </li>
               <li>
                 <button
-                  onClick={scrollToServices}
+                  onClick={() => scrollTo("services")}
                   className="text-sm font-medium text-gray-800 transition hover:text-[var(--color-brand-700)] cursor-pointer"
                 >
                   {t.header.ourServices}
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollTo("whyHackstle")}
+                  className="text-sm font-medium text-gray-800 transition hover:text-[var(--color-brand-700)] cursor-pointer"
+                >
+                  {t.header.whyHackstle}
                 </button>
               </li>
               <li>
@@ -144,10 +167,18 @@ export default function Header() {
               <ul className="space-y-1">
                 <li>
                   <button
-                    onClick={scrollToServices}
+                    onClick={() => scrollTo("services")}
                     className="w-full text-left px-4 py-3 text-gray-800 hover:bg-gray-50/80 transition-colors font-medium"
                   >
                     {t.header.ourServices}
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => scrollTo("whyHackstle")}
+                    className="w-full text-left px-4 py-3 text-gray-800 hover:bg-gray-50/80 transition-colors font-medium"
+                  >
+                    {t.header.whyHackstle}
                   </button>
                 </li>
                 <li>

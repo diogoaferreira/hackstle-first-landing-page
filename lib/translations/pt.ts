@@ -4,6 +4,7 @@ export const pt: Translations = {
   header: {
     home: 'Início',
     ourServices: 'Os Nossos Serviços',
+    whyHackstle: 'Why Hackstle',
     aboutUs: 'Sobre nós',
     blog: 'Blog',
     contactUs: 'Contacte-nos',
@@ -17,69 +18,69 @@ export const pt: Translations = {
   },
   
   features: {
-    title: 'Inteligência de ameaças integrada com consciência da superfície de ataque',
+    title: 'Threat intelligence combined with attack surface awareness',
     services: {
-      darkwebThreatMonitoring: {
-        title: 'Monitoramento de Ameaças da Darkweb',
-        description: 'Rastreie posts de ransomware, vazamentos de dados e conversas de atores de ameaças emergentes em marketplaces e fóruns mapeados para suas marcas e executivos.',
+      s1: {
+        title: 'External Asset Discovery & Shadow IT Mapping',
+        description: 'Identify all internet-facing infrastructure, cloud services, SaaS systems, domains, subdomains, and unmanaged assets using active and passive intelligence methods.',
       },
-      leakedCredentialTriage: {
-        title: 'Triagem de Credenciais Vazadas',
-        description: 'Identifique novos vazamentos de credenciais, valide a exposição e promova takedowns ou resets antes que adversários utilizem o acesso roubado.',
+      s2: {
+        title: 'Exposure Enumeration & Service Assessment',
+        description: 'Catalog open services, misconfigurations, weak protocols, outdated technologies, and insecure components across the perimeter and cloud environments.',
       },
-      cveExploitCorrelation: {
-        title: 'Correlação de CVE e Exploits',
-        description: 'Conecte conversas sobre vulnerabilidades e drops de proof-of-concept aos ativos que você possui, com severidade baseada na explorabilidade e intenção ativa da darkweb.',
+      s3: {
+        title: 'Dark Web Threat Monitoring',
+        description: 'Monitor ransomware leaks, exploit sales, data dumps, credential exposures, and criminal chatter tied to your assets, employees, brands, and infrastructure.',
       },
-      attackSurfaceManagement: {
-        title: 'Gerenciamento de Superfície de Ataque',
-        description: 'Mapeie continuamente ativos voltados para a internet, descubra shadow IT e correlacione exposições com inteligência para que a remediação atinja o que os atacantes veem primeiro.',
+      s4: {
+        title: 'Leaked Credential & Identity Exposure Detection',
+        description: 'Identify compromised credentials, access keys, tokens, and identity misuse across dark web markets, breach dumps, and credential harvesting ecosystems.',
       },
-      redTeamingOperations: {
-        title: 'Operações de Red Team',
-        description: 'Simule adversários modernos, combine inteligência da darkweb e teste detecções com caminhos de ataque ativos mapeados para seu ambiente.',
+      s5: {
+        title: 'Third-Party Incident Watch',
+        description: 'Monitor supplier breaches and ransomware incidents to understand cascading supply chain risks.',
       },
-      penetrationTesting: {
-        title: 'Testes de Penetração',
-        description: 'Valide fraquezas exploráveis com pentests curados que alimentam correções priorizadas de volta para equipes de engenharia e governança.',
+      s6: {
+        title: 'Brand, Domain & Infrastructure Abuse Monitoring',
+        description: 'Detect phishing kits, clone sites, typosquats, and malicious domain activity, then coordinate rapid takedowns.',
       },
-      thirdPartyIncidentWatch: {
-        title: 'Monitoramento de Incidentes de Terceiros',
-        description: 'Monitore violações e reivindicações de ransomware de fornecedores para entender o risco em cascata para sua cadeia de suprimentos e clientes.',
+      s7: {
+        title: 'Vulnerability & Exploit Prioritization',
+        description: 'Rank exposures based on adversary interest, exploit maturity, business impact, and active threat intelligence — not CVSS alone.',
       },
-      actionableWorkflows: {
-        title: 'Fluxos de Trabalho Acionáveis',
-        description: 'Automatize alertas para canais SOC, ticketing e parceiros de takedown com contexto que reduz a investigação para minutos.',
+      s8: {
+        title: 'Threat-Led Exposure Validation & Continuous Risk Monitoring',
+        description: 'Correlate exposures with real-world attacker behavior, validate exploitability and attack paths, and continuously track changes to keep high-risk findings controlled over time.',
       },
-      brandProtectionTakedowns: {
-        title: 'Proteção de Marca e Takedowns',
-        description: 'Caçe kits de phishing sofisticados, sites clones e typosquats, depois coordene takedowns rápidos de domínios para manter a confiança do cliente e o valor da marca intactos.',
+      s9: {
+        title: 'Actionable Remediation Workflows',
+        description: 'Deliver prioritized, intelligence-driven mitigation steps and automate alerts into SOC channels, ticketing systems, and takedown partners.',
       },
     },
     planetSignals: {
       criticalPortExposed: {
-        title: 'Porta crítica exposta',
-        detail: 'FTP no edge-gateway deixado aberto há 32m',
-        status: 'Alto risco',
-        metric: 'Sinal ao vivo',
+        title: 'Critical port exposed',
+        detail: 'FTP on edge-gateway left open 32m',
+        status: 'High risk',
+        metric: 'Live signal',
       },
       exploitChatterSpiking: {
-        title: 'Conversa sobre exploit aumentando',
-        detail: 'CVE-2024-5039 mapeado para app-core',
+        title: 'Exploit chatter spiking',
+        detail: 'CVE-2024-5039 mapped to app-core',
         status: 'Exploit',
-        metric: '+18 menções',
+        metric: '+18 mentions',
       },
       freshCredentialDump: {
-        title: 'Novo dump de credenciais',
-        detail: 'Pacote de ops financeiras / 184 contas',
-        status: 'Novo',
-        metric: 'Indexando agora',
+        title: 'Fresh credential dump',
+        detail: 'Finance ops bundle / 184 accounts',
+        status: 'New',
+        metric: 'Now indexing',
       },
       shadowServiceFound: {
-        title: 'Serviço sombra encontrado',
-        detail: 'EDR + provedor SSO não rastreado',
-        status: 'Investigar',
-        metric: 'Novo ativo',
+        title: 'Shadow service found',
+        detail: 'Untracked EDR + SSO provider',
+        status: 'Investigate',
+        metric: 'New asset',
       },
     },
   },
@@ -180,6 +181,62 @@ export const pt: Translations = {
     title: 'Profissionais de elite por trás de cada alerta',
     subtitle: 'Analistas da Hackstle combinam tradecraft da darkweb com disciplina de relatórios empresariais. De operadores de Red Team a frameworks de inteligência de ameaças, a equipe é certificada para lidar com incidentes complexos com confiança.',
     certificatesTitle: 'Certificações que trazemos para cada investigação',
+  },
+
+  whatWeOffer: {
+    title: 'O que oferecemos',
+    subtitle: 'Fornecemos inteligência acionável e gestão de exposição em toda a sua paisagem voltada para a internet.',
+    services: {
+      cti: {
+        title: 'Inteligência de Ameaças Cibernéticas',
+        items: [
+          'Inteligência da Dark Web: vazamentos, exposição de segredos, conversas criminosas',
+          'Monitoramento e Proteção de Marca',
+          'Descoberta de Shadow IT',
+          'Análise de impacto acionável e orientação de mitigação',
+        ],
+      },
+      asm: {
+        title: 'Gestão de Superfície de Ataque',
+        items: [
+          'Mapeamento de perímetro externo',
+          'Identificação de exposição de serviços e portas',
+          'Descoberta contínua de riscos voltados para a internet',
+        ],
+      },
+      assessments: {
+        title: 'Avaliações de Segurança',
+        items: [
+          'Testes de penetração Black, Grey e White Box',
+          'Testes de aplicação, infraestrutura e sistemas internos',
+          'Validação orientada por exploits de risco do mundo real',
+        ],
+      },
+      audit: {
+        title: 'Auditoria e Conformidade',
+        items: [
+          'Avaliações de lacunas (ISO 27001, NIS2, SOC2, GDPR, PCI-DSS)',
+          'Alinhamento de políticas, processos e controles',
+          'Planejamento de remediação e suporte à implementação',
+        ],
+      },
+      redteam: {
+        title: 'Operações de Red Team',
+        items: [
+          'Simulação de adversários',
+          'Intrusões baseadas em objetivos',
+          'Teste de stress de detecção e resposta',
+        ],
+      },
+      ciso: {
+        title: 'CISO como Serviço',
+        items: [
+          'Liderança CISO fracionária',
+          'Roteiro estratégico de cibersegurança',
+          'Gestão de riscos, governança e relatórios para o conselho',
+        ],
+      },
+    },
   },
 
   cta: {

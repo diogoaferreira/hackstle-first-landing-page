@@ -4,56 +4,57 @@ export const en: Translations = {
   header: {
     home: 'Home',
     ourServices: 'Our Services',
+    whyHackstle: 'Why Hackstle',
     aboutUs: 'About us',
     blog: 'Blog',
     contactUs: 'Contact us',
   },
   
   hero: {
-    title: 'Darkweb threat intelligence that acts fast',
-    subtitle: 'We hunt the dark web for leaks, exploits, and criminal chatter, then cut the noise and tell you exactly what to do about it. No experts needed from your side. No guessing. No bullsh*t.',
+    title: 'We Are Your Eyes Out There',
+    subtitle: 'We transform Threat Intelligence into action. We hunt the dark web for leaks, exploits, and criminal chatter, then cut the noise and tell you exactly what to do about it. No experts needed from your side. No guessing. No bullsh*t.',
     cta: 'Request intelligence briefing',
     terminalTitle: 'hackstle.cmd',
   },
   
   features: {
-    title: 'Threat intelligence fused with attack surface awareness',
+    title: 'Threat intelligence combined with attack surface awareness',
     services: {
-      darkwebThreatMonitoring: {
-        title: 'Darkweb Threat Monitoring',
-        description: 'Track ransomware posts, data leaks, and emerging threat actor chatter across marketplaces and forums mapped to your brands and executives.',
+      s1: {
+        title: 'External Asset Discovery & Shadow IT Mapping',
+        description: 'Identify all internet-facing infrastructure, cloud services, SaaS systems, domains, subdomains, and unmanaged assets using active and passive intelligence methods.',
       },
-      leakedCredentialTriage: {
-        title: 'Leaked Credential Triage',
-        description: 'Surface fresh credential drops, validate exposure, and push takedowns or resets before adversaries weaponize stolen access.',
+      s2: {
+        title: 'Exposure Enumeration & Service Assessment',
+        description: 'Catalog open services, misconfigurations, weak protocols, outdated technologies, and insecure components across the perimeter and cloud environments.',
       },
-      cveExploitCorrelation: {
-        title: 'CVE & Exploit Correlation',
-        description: 'Link vulnerability chatter and proof-of-concept drops to the assets you own, with severity driven by exploitability and live darkweb intent.',
+      s3: {
+        title: 'Dark Web Threat Monitoring',
+        description: 'Monitor ransomware leaks, exploit sales, data dumps, credential exposures, and criminal chatter tied to your assets, employees, brands, and infrastructure.',
       },
-      attackSurfaceManagement: {
-        title: 'Attack Surface Management',
-        description: 'Continuously map internet-facing assets, uncover shadow IT, and correlate exposures with intel so remediation hits what attackers see first.',
+      s4: {
+        title: 'Leaked Credential & Identity Exposure Detection',
+        description: 'Identify compromised credentials, access keys, tokens, and identity misuse across dark web markets, breach dumps, and credential harvesting ecosystems.',
       },
-      redTeamingOperations: {
-        title: 'Red Teaming Operations',
-        description: 'Simulate modern adversaries, chain together darkweb intel, and stress-test detections with live attack paths mapped to your environment.',
-      },
-      penetrationTesting: {
-        title: 'Penetration Testing',
-        description: 'Validate exploitable weaknesses with curated pentests that feed prioritized fixes back to engineering and governance teams.',
-      },
-      thirdPartyIncidentWatch: {
+      s5: {
         title: 'Third-Party Incident Watch',
-        description: 'Monitor breaches and supplier ransomware claims to understand cascading risk to your supply chain and customers.',
+        description: 'Monitor supplier breaches and ransomware incidents to understand cascading supply chain risks.',
       },
-      actionableWorkflows: {
-        title: 'Actionable Workflows',
-        description: 'Automate alerts to SOC channels, ticketing, and takedown partners with context that shortens investigation to minutes.',
+      s6: {
+        title: 'Brand, Domain & Infrastructure Abuse Monitoring',
+        description: 'Detect phishing kits, clone sites, typosquats, and malicious domain activity, then coordinate rapid takedowns.',
       },
-      brandProtectionTakedowns: {
-        title: 'Brand Protection & Takedowns',
-        description: 'Hunt sophisticated phishing kits, clone sites, and typosquats, then coordinate rapid domain takedowns to keep customer trust and brand equity intact.',
+      s7: {
+        title: 'Vulnerability & Exploit Prioritization',
+        description: 'Rank exposures based on adversary interest, exploit maturity, business impact, and active threat intelligence — not CVSS alone.',
+      },
+      s8: {
+        title: 'Threat-Led Exposure Validation & Continuous Risk Monitoring',
+        description: 'Correlate exposures with real-world attacker behavior, validate exploitability and attack paths, and continuously track changes to keep high-risk findings controlled over time.',
+      },
+      s9: {
+        title: 'Actionable Remediation Workflows',
+        description: 'Deliver prioritized, intelligence-driven mitigation steps and automate alerts into SOC channels, ticketing systems, and takedown partners.',
       },
     },
     planetSignals: {
@@ -152,8 +153,8 @@ export const en: Translations = {
   },
 
   differentiators: {
-    badge: 'Why Hackstle is different',
-    title: 'Built for teams that need precision, not another portal',
+    badge: 'Why Hackstle',
+    title: 'Why Hackstle',
     subtitle: 'Hackstle trims noise, tailors coverage to your environment, and turns darkweb intelligence into clear, decisive actions.',
     items: {
       tailoredIntelligence: {
@@ -171,6 +172,62 @@ export const en: Translations = {
       reportingThatLands: {
         title: 'Reporting that lands',
         description: 'Executive-ready reports summarize impact, urgency, and recommended actions so you can brief stakeholders with confidence.',
+      },
+    },
+  },
+
+  whatWeOffer: {
+    title: 'What we offer',
+    subtitle: 'We deliver actionable intelligence and exposure management across your internet-facing landscape.',
+    services: {
+      cti: {
+        title: 'Cyber Threat Intelligence',
+        items: [
+          'Dark Web Intelligence: leaks, secrets exposure, criminal chatter',
+          'Brand Monitoring & Protection',
+          'Shadow IT Discovery',
+          'Actionable impact analysis & mitigation guidance',
+        ],
+      },
+      asm: {
+        title: 'Attack Surface Management',
+        items: [
+          'External perimeter mapping',
+          'Service & port exposure identification',
+          'Continuous discovery of internet-facing risks',
+        ],
+      },
+      assessments: {
+        title: 'Security Assessments',
+        items: [
+          'Black, Grey, and White Box penetration testing',
+          'Application, infrastructure, and internal system testing',
+          'Exploit-driven validation of real-world risk',
+        ],
+      },
+      audit: {
+        title: 'Audit & Compliance',
+        items: [
+          'Gap assessments (ISO 27001, NIS2, SOC2, GDPR, PCI-DSS)',
+          'Policy, process, and control alignment',
+          'Remediation planning & implementation support',
+        ],
+      },
+      redteam: {
+        title: 'Red Team Operations',
+        items: [
+          'Adversary simulation',
+          'Objective-based intrusions',
+          'Detection and response stress-testing',
+        ],
+      },
+      ciso: {
+        title: 'CISO as a Service',
+        items: [
+          'Fractional CISO leadership',
+          'Strategic cybersecurity roadmap',
+          'Risk management, governance, and board reporting',
+        ],
       },
     },
   },
