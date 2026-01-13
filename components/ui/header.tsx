@@ -56,21 +56,6 @@ export default function Header() {
     setIsMenuOpen(false); // Close mobile menu after clicking
   };
 
-  const scrollToServices = () => {
-    const servicesSection = document.getElementById('services');
-    if (servicesSection) {
-      // If we're on the homepage and the services section exists, scroll to it
-      servicesSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    } else {
-      // If we're on a different page, navigate to homepage with hash
-      window.location.href = '/#services';
-    }
-    setIsMenuOpen(false); // Close mobile menu after clicking
-  };
-
   const handleLinkClick = () => {
     setIsMenuOpen(false); // Close mobile menu after clicking
   };
@@ -113,12 +98,12 @@ export default function Header() {
                 </button>
               </li>
               <li>
-                <Link
-                  href="/blog"
-                  className="text-sm font-medium text-gray-800 transition hover:text-[var(--color-brand-700)]"
+                <button
+                  onClick={() => scrollTo("about")}
+                  className="text-sm font-medium text-gray-800 transition hover:text-[var(--color-brand-700)] cursor-pointer"
                 >
                   {t.header.aboutUs}
-                </Link>
+                </button>
               </li>
               <li>
                 <Link
@@ -166,6 +151,15 @@ export default function Header() {
             <nav className="py-2">
               <ul className="space-y-1">
                 <li>
+                  <Link
+                    href="/"
+                    onClick={handleLinkClick}
+                    className="block px-4 py-3 text-gray-800 hover:bg-gray-50/80 transition-colors font-medium"
+                  >
+                    {t.header.home}
+                  </Link>
+                </li>
+                <li>
                   <button
                     onClick={() => scrollTo("services")}
                     className="w-full text-left px-4 py-3 text-gray-800 hover:bg-gray-50/80 transition-colors font-medium"
@@ -182,13 +176,12 @@ export default function Header() {
                   </button>
                 </li>
                 <li>
-                  <Link
-                    href="/blog"
-                    onClick={handleLinkClick}
-                    className="block px-4 py-3 text-gray-800 hover:bg-gray-50/80 transition-colors font-medium"
+                  <button
+                    onClick={() => scrollTo("about")}
+                    className="w-full text-left px-4 py-3 text-gray-800 hover:bg-gray-50/80 transition-colors font-medium"
                   >
                     {t.header.aboutUs}
-                  </Link>
+                  </button>
                 </li>
                 <li>
                   <Link
