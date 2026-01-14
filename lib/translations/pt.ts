@@ -250,4 +250,11 @@ export const pt: Translations = {
     retry: 'Tentar novamente',
     contact: 'Contacto',
   },
+
+  footer: {
+    allRights: "Todos os direitos reservados",
+    company: "Empresa",
+    resources: "Recursos",
+    social: "Social"
+  }
 };

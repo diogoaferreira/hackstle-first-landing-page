@@ -250,4 +250,11 @@ export const en: Translations = {
     retry: 'Try again',
     contact: 'Contact',
   },
+
+  footer: {
+    allRights: "All rights reserved",
+    company: "Company",
+    resources: "Resources",
+    social: "Social"
+  }
 };

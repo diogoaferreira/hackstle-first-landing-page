@@ -233,6 +233,13 @@ export interface Translations {
     retry: string;
     contact: string;
   };
+
+  footer: {
+    allRights: string;
+    company: string;
+    resources: string;
+    social: string;
+  }
 }
 
 export const defaultLanguage: Language = 'en';

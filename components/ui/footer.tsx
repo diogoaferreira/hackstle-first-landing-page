@@ -1,7 +1,24 @@
 import Link from "next/link";
 import Logo from "./logo";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer({ border = false }: { border?: boolean }) {
+  const { t } = useLanguage();
+
+  const scrollTo = (sectionName: string) => {
+    const servicesSection = document.getElementById(sectionName);
+    if (servicesSection) {
+      // If we're on the homepage and the services section exists, scroll to it
+      servicesSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      // If we're on a different page, navigate to homepage with hash
+      window.location.href = '/#'+sectionName;
+    }
+  };
+
   return (
     <footer>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -15,11 +32,12 @@ export default function Footer({ border = false }: { border?: boolean }) {
               <Logo />
             </div>
             <div className="text-sm text-gray-600">
-              &copy; hackstle.com - All rights reserved.
+              &copy; hackstle.com - {t.footer.allRights}.
             </div>
           </div>
 
           {/* 2nd block */}
+          {/*
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
             <h3 className="text-sm font-medium">Product</h3>
             <ul className="space-y-2 text-sm">
@@ -65,49 +83,41 @@ export default function Footer({ border = false }: { border?: boolean }) {
               </li>
             </ul>
           </div>
-
+          */}
           {/* 3rd block */}
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-sm font-medium">Company</h3>
+            <h3 className="text-sm font-medium">{t.footer.company}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                  href="/#home"
                 >
-                  About us
+                  {t.header.home}
                 </Link>
               </li>
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                  href="/#services"
                 >
-                  Diversity & Inclusion
+                  {t.header.ourServices}
                 </Link>
               </li>
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                  href="/#whyHackstle"
                 >
-                  Blog
+                  {t.header.whyHackstle}
                 </Link>
               </li>
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                  href="#about"
                 >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
-                >
-                  Financial statements
+                  {t.header.aboutUs}
                 </Link>
               </li>
             </ul>
@@ -115,8 +125,9 @@ export default function Footer({ border = false }: { border?: boolean }) {
 
           {/* 4th block */}
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-sm font-medium">Resources</h3>
+            <h3 className="text-sm font-medium">{t.footer.resources}</h3>
             <ul className="space-y-2 text-sm">
+              {/*
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
@@ -125,20 +136,21 @@ export default function Footer({ border = false }: { border?: boolean }) {
                   Community
                 </Link>
               </li>
+              */}
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                  href="/blog"
                 >
-                  Terms of service
+                  {t.header.blog}
                 </Link>
               </li>
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
-                  href="#0"
+                  href="/contact"
                 >
-                  Report a vulnerability
+                  {t.header.contactUs}
                 </Link>
               </li>
             </ul>
@@ -146,8 +158,9 @@ export default function Footer({ border = false }: { border?: boolean }) {
 
           {/* 5th block */}
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-sm font-medium">Social</h3>
+            <h3 className="text-sm font-medium">{t.footer.social}</h3>
             <ul className="flex gap-1">
+              {/*
               <li>
                 <Link
                   className="flex items-center justify-center text-[var(--color-brand-500)] transition hover:text-[var(--color-brand-600)]"
@@ -163,21 +176,23 @@ export default function Footer({ border = false }: { border?: boolean }) {
                   </svg>
                 </Link>
               </li>
+              */}
               <li>
                 <Link
                   className="flex items-center justify-center text-[var(--color-brand-500)] transition hover:text-[var(--color-brand-600)]"
                   href="#0"
-                  aria-label="Medium"
+                  aria-label="linkedin"
                 >
-                  <svg
+                  <svg 
                     className="h-8 w-8 fill-current"
-                    viewBox="0 0 32 32"
                     xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 32 32"
                   >
-                    <path d="M23 8H9a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1Zm-1.708 3.791-.858.823a.251.251 0 0 0-.1.241V18.9a.251.251 0 0 0 .1.241l.838.823v.181h-4.215v-.181l.868-.843c.085-.085.085-.11.085-.241v-4.887l-2.41 6.131h-.329l-2.81-6.13V18.1a.567.567 0 0 0 .156.472l1.129 1.37v.181h-3.2v-.181l1.129-1.37a.547.547 0 0 0 .146-.472v-4.749a.416.416 0 0 0-.138-.351l-1-1.209v-.181H13.8l2.4 5.283 2.122-5.283h2.971l-.001.181Z"></path>
+                    <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z" />
                   </svg>
                 </Link>
               </li>
+              {/*
               <li>
                 <Link
                   className="flex items-center justify-center text-[var(--color-brand-500)] transition hover:text-[var(--color-brand-600)]"
@@ -193,6 +208,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                   </svg>
                 </Link>
               </li>
+              */}
             </ul>
           </div>
         </div>

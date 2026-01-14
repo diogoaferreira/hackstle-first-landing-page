@@ -71,15 +71,16 @@ export default function Header() {
           </div>
             
           {/* Desktop navigation */}
-          <nav className="hidden md:flex">
+          {/* <nav className="hidden md:flex"> */}
+          <nav className="hidden lg:flex">
             <ul className="flex items-center gap-6">
               <li>
-                <Link
-                  href="/"
-                  className="text-sm font-medium text-gray-800 transition hover:text-[var(--color-brand-700)]"
+                <button
+                  onClick={() => scrollTo("home")}
+                  className="text-sm font-medium text-gray-800 transition hover:text-[var(--color-brand-700)] cursor-pointer"
                 >
                   {t.header.home}
-                </Link>
+                </button>
               </li>
               <li>
                 <button
@@ -128,9 +129,14 @@ export default function Header() {
           </nav>
 
           {/* Mobile menu button */}
+          {/* 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-gray-800 hover:bg-gray-100/50 transition-colors"
+          */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg text-gray-800 hover:bg-gray-100/50 transition-colors"
             aria-label="Toggle menu"
             data-mobile-menu
           >
@@ -144,8 +150,12 @@ export default function Header() {
 
         {/* Mobile navigation menu */}
         {isMenuOpen && (
+          /*
           <div 
             className="md:hidden absolute top-16 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl shadow-black/[0.08] border border-gray-200/50 overflow-hidden"
+          */
+          <div 
+            className="lg:hidden absolute top-16 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl shadow-black/[0.08] border border-gray-200/50 overflow-hidden"
             data-mobile-menu
           >
             <nav className="py-2">
@@ -212,8 +222,12 @@ export default function Header() {
 
       {/* Mobile menu backdrop */}
       {isMenuOpen && (
+        /*
         <div 
           className="md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm -z-10"
+        */
+        <div 
+          className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm -z-10"
           onClick={() => setIsMenuOpen(false)}
         />
       )}
