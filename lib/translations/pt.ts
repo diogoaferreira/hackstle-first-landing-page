@@ -49,7 +49,7 @@ export const pt: Translations = {
         description: 'Classifique exposições com base no interesse dos atacantes, maturidade do exploit, impacto no negócio e threat intelligence ativa — não apenas no CVSS.',
       },
       s8: {
-        title: 'Validação de exposições orientada por ameaças & monitorização contínua de risco',
+        title: 'Validação de exposição & monitorização contínua de risco',
         description: 'Correlacione exposições com comportamento real de atacantes, valide explorabilidade e caminhos de ataque, e acompanhe alterações de forma contínua para manter riscos elevados sob controlo.',
       },
       s9: {

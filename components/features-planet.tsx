@@ -195,7 +195,7 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <Network
-                  className="h-4 w-4 text-[var(--color-brand-500)]"
+                  className="h-8 w-8 text-[var(--color-brand-500)]"
                   strokeWidth={1.75}
                 />
                 <span>{t.features.services.s1.title}</span>
@@ -207,7 +207,7 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <Radar
-                  className="h-4 w-4 text-[var(--color-brand-500)]"
+                  className="h-8 w-8 text-[var(--color-brand-500)]"
                   strokeWidth={1.75}
                 />
                 <span>{t.features.services.s2.title}</span>
@@ -219,7 +219,7 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <Eye
-                  className="h-4 w-4 text-[var(--color-brand-500)]"
+                  className="h-8 w-8 text-[var(--color-brand-500)]"
                   strokeWidth={1.75}
                 />
                 <span>{t.features.services.s3.title}</span>
@@ -231,7 +231,7 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <KeyRound
-                  className="h-4 w-4 text-[var(--color-brand-500)]"
+                  className="h-8 w-8 text-[var(--color-brand-500)]"
                   strokeWidth={1.75}
                 />
                 <span>{t.features.services.s4.title}</span>
@@ -243,7 +243,7 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <FileWarning
-                  className="h-4 w-4 text-[var(--color-brand-500)]"
+                  className="h-8 w-8 text-[var(--color-brand-500)]"
                   strokeWidth={1.75}
                 />
                 <span>{t.features.services.s5.title}</span>
@@ -255,7 +255,7 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <ShieldAlert
-                  className="h-4 w-4 text-[var(--color-brand-500)]"
+                  className="h-8 w-8 text-[var(--color-brand-500)]"
                   strokeWidth={1.75}
                 />
                 <span>{t.features.services.s6.title}</span>
@@ -267,7 +267,7 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <Bug
-                  className="h-4 w-4 text-[var(--color-brand-500)]"
+                  className="h-8 w-8 text-[var(--color-brand-500)]"
                   strokeWidth={1.75}
                 />
                 <span>{t.features.services.s7.title}</span>
@@ -279,7 +279,7 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <Swords
-                  className="h-4 w-4 text-[var(--color-brand-500)]"
+                  className="h-8 w-8 text-[var(--color-brand-500)]"
                   strokeWidth={1.75}
                 />
                 <span>{t.features.services.s8.title}</span>
@@ -291,7 +291,7 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <Workflow
-                  className="h-4 w-4 text-[var(--color-brand-500)]"
+                  className="h-8 w-8 text-[var(--color-brand-500)]"
                   strokeWidth={1.75}
                 />
                 <span>{t.features.services.s9.title}</span>
