@@ -106,6 +106,7 @@ export default function Header() {
                   {t.header.aboutUs}
                 </button>
               </li>
+              {/*
               <li>
                 <Link
                   href="/blog"
@@ -114,9 +115,12 @@ export default function Header() {
                   {t.header.blog}
                 </Link>
               </li>
+              */}
+              {/*
               <li>
                 <LanguageSwitcher />
               </li>
+              */}
               <li>
                 <Link
                   href="/contact"
@@ -193,6 +197,7 @@ export default function Header() {
                     {t.header.aboutUs}
                   </button>
                 </li>
+                {/* 
                 <li>
                   <Link
                     href="/blog"
@@ -202,9 +207,12 @@ export default function Header() {
                     {t.header.blog}
                   </Link>
                 </li>
+                */}
+                {/*
                 <li className="px-4 py-2">
                   <LanguageSwitcher />
                 </li>
+                */}
                 <li className="px-4 py-3">
                   <Link
                     href="/contact"

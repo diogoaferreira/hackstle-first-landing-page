@@ -137,6 +137,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 </Link>
               </li>
               */}
+              {/* 
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
@@ -145,6 +146,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                   {t.header.blog}
                 </Link>
               </li>
+              */}
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
